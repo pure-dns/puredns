@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>PayloadContent</key>
+<array>
+<dict>
+<key>DNSSettings</key>
+<dict>
+<key>DNSProtocol</key>
+<string>TLS</string>
+<key>ServerName</key>
+<string>puredns.org</string>
+</dict>
+<key>OnDemandRules</key>
+<array>
+<dict>
+<key>Action</key>
+<string>Connect</string>
+<key>InterfaceTypeMatch</key>
+<string>WiFi</string>
+</dict>
+<dict>
+<key>Action</key>
+<string>Connect</string>
+<key>InterfaceTypeMatch</key>
+<string>Cellular</string>
+</dict>
+<dict>
+<key>Action</key>
+<string>Disconnect</string>
+</dict>
+</array>
+<key>PayloadDescription</key>
+<string>Configures device to use PureDNS Encrypted DNS over TLS</string>
+<key>PayloadDisplayName</key>
+<string>PureDNS DNS over TLS</string>
+<key>PayloadIdentifier</key>
+<string>com.apple.dnsSettings.managed.c87ade9d-9a1e-46b0-83f2-332beb9b442b</string>
+<key>PayloadType</key>
+<string>com.apple.dnsSettings.managed</string>
+<key>PayloadUUID</key>
+<string>8a01ab0d-4b7e-4cf3-b13f-5853801b82e4</string>
+<key>PayloadVersion</key>
+<integer>1</integer>
+<key>ProhibitDisablement</key>
+<false/>
+</dict>
+</array>
+<key>PayloadDescription</key>
+<string>Adds different encrypted DNS configurations to Big Sur and iOS 14 based systems</string>
+<key>PayloadDisplayName</key>
+<string>Encrypted DNS (DoH, DoT)</string>
+<key>PayloadIdentifier</key>
+<string>com.notjakob.apple-dns.dad0fdc4-14d6-4caf-9351-43b6817020ea</string>
+<key>PayloadRemovalDisallowed</key>
+<false/>
+<key>PayloadType</key>
+<string>Configuration</string>
+<key>PayloadUUID</key>
+<string>706d284b-d8e9-4c28-a6fa-b29bbe287457</string>
+<key>PayloadVersion</key>
+<integer>1</integer>
+</dict>
+</plist>

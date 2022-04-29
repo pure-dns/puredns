@@ -1,0 +1,49 @@
+---
+title: PureDNS | Secure And Fast Internet
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {%- set subtitle %}{{ newstitle or title }}{% endset %}
+		{%- set subtitleText %}{{ title }}{% if subtitle and subtitle != "PureDNS | Secure And Fast Internet" %} | PureDNS{% endif %}{% endset %}
+    <title>{{ subtitleText }}</title>
+    <meta name="description" content="{{ subtitleText }}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.statically.io/gh/picocss/pico/f9e97c0b/css/pico.min.css"
+    />
+
+    {%- set css %}
+    {% include "css/app.css" %}
+    {% endset %}
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
+
+    <script
+      async
+      defer
+      data-website-id="421c9e89-e166-4447-9aef-84ed7d7a6e9c"
+      src="https://respectedprivacy.com/app"
+    ></script>
+  </head>
+  <body>
+    {% include "components/header.njk" %}
+
+    {{ content | safe }}
+
+    {% include "components/footer.njk" %}
+
+    {%- set js %}
+    {% include "js/app.js" %}
+    {% endset %}
+    <script>
+      {{ js | jsmin | safe }}
+    </script>
+  </body>
+</html>

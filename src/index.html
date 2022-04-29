@@ -1,0 +1,690 @@
+---
+layout: layouts/base.njk
+permalink: /
+---
+
+<main id="setup-guide">
+  <section>
+    <div class="container">
+      <div class="grid">
+        <article class="tab grid" data-theme="dark">
+          <button class="tab-links active" onclick="openTab(event, 'dot')">
+            DNS-over-TLS
+          </button>
+          <button class="tab-links" onclick="openTab(event, 'doh')">
+            DNS-over-HTTPS
+          </button>
+          <button class="tab-links" onclick="openTab(event, 'dnscrypt')">
+            DNSCrypt
+          </button>
+          <button class="tab-links" onclick="openTab(event, 'dns')">DNS</button>
+        </article>
+        <article class="grid">
+          <div id="dot" class="tab-content" style="display: block">
+            <h3>Using DNS-over-TLS</h3>
+            <p>
+              We provide DNS-over-TLS support on standard port
+              <strong>853</strong>. To start using PureDNS with DNS-over-TLS,
+              you can use the following address.
+            </p>
+
+            <pre><code>puredns.org</code></pre>
+
+            <p>
+              Learn how to configure DNS-over-TLS on your device with the setup
+              guide below.
+            </p>
+          </div>
+
+          <div id="doh" class="tab-content">
+            <h3>Using DNS-over-HTTPS</h3>
+            <p>
+              DNS-over-HTTPS support is available on standard port
+              <strong>443</strong>. Our DoH servers support
+              <strong>HTTP/2</strong> and <strong>HTTP/3</strong> for fast
+              lookup results and to avoid blocking from ISPs.
+            </p>
+
+            <pre><code>https://puredns.org/dns-query</code></pre>
+          </div>
+
+          <div id="dnscrypt" class="tab-content">
+            <h3>Using DNSCrypt</h3>
+            <p>
+              PureDNS can be used with
+              <a
+                href="https://github.com/DNSCrypt/dnscrypt-proxy"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                DNSCrypt
+              </a>
+              as a client by using <strong>DNS Stamps</strong>. Use the
+              following DNS stamp in your DNSCrypt configuration.
+            </p>
+
+            <pre><code>sdns://AgcAAAAAAAAAAAALcHVyZWRucy5vcmcKL2Rucy1xdWVyeQ</code></pre>
+
+            <p>
+              You can verify the DNS stamp above using
+              <a
+                href="https://dnscrypt.info/stamps/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                this tool
+              </a>
+              provided by the official DNSCrypt team.
+            </p>
+          </div>
+
+          <div id="dns" class="tab-content">
+            <h3>Using Plain DNS</h3>
+            <p>
+              While we don't recommend using unencrypted DNS (standard port
+              <strong>53</strong>) for private internet, there are some of us
+              who want this support as part of their implementation; like using
+              PureDNS on Routers. Use the IP addresses below to start using
+              PureDNS.
+            </p>
+
+            <p>For IPv4:</p>
+            <pre><code>108.137.44.39
+108.137.44.9</code></pre>
+
+            <p>For IPv6:</p>
+
+            <pre><code>2406:da19:66f:e810:2f1b:9ce8:a5f1:132f
+2406:da19:66f:e810:92ad:7e02:fa25:38b9</code></pre>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section id="how-to-use">
+  <div class="container" style="max-width: 35rem">
+    <div
+      class="tab2 grid"
+      style="border-bottom: 1px solid #ddd; font-size: 18px; margin: auto"
+    >
+      <a class="tab2-links active" onclick="openTab2(event, 'android')">
+        Android
+      </a>
+      <a class="tab2-links" onclick="openTab2(event, 'ios')">iOS</a>
+      <a class="tab2-links" onclick="openTab2(event, 'linux')">Linux</a>
+      <a class="tab2-links" onclick="openTab2(event, 'windows')">Windows</a>
+      <a class="tab2-links" onclick="openTab2(event, 'macos')">macOS</a>
+      <a class="tab2-links" onclick="openTab2(event, 'browsers')"> Browsers </a>
+      <a class="tab2-links" onclick="openTab2(event, 'routers')">Routers</a>
+    </div>
+    <article style="margin-top: 2rem; box-shadow: none; padding: 0">
+      <div id="android" class="tab2-content" style="display: block">
+        <header style="margin-bottom: var(--typography-spacing-vertical)">
+          <h4 style="margin-bottom: 0">Private DNS</h4>
+          <small style="font-size: 15px"> Requires Android 9 or higher </small>
+        </header>
+        <ol>
+          <li>
+            Go to <strong>Settings</strong> →
+            <strong>Network & internet</strong> → <strong>Advanced</strong> →
+            <strong>Private DNS</strong>.
+          </li>
+          <li>
+            Select the
+            <strong>Private DNS provider hostname</strong> option.
+          </li>
+          <li>
+            Enter <strong>puredns.org</strong> and click <strong>Save</strong>.
+          </li>
+        </ol>
+
+        <header style="margin-top: 2rem; margin-bottom: 1rem">
+          <h4 style="margin-bottom: 0">Intra</h4>
+        </header>
+        <p>
+          <a
+            href="https://play.google.com/store/apps/details?id=app.intra"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              src="/img/google-play.svg"
+              alt="Get Intra app on the Google Play"
+              width="172"
+            />
+          </a>
+        </p>
+        <ol>
+          <li>Install <strong>Intra</strong> app from the Play Store.</li>
+          <li>
+            Go to <strong>Settings</strong> →
+            <strong>DNS over HTTPS Server</strong> →
+            <strong>Custom server URL</strong>.
+          </li>
+          <li>
+            Enter <strong>https://puredns.org/dns-query</strong> and click
+            <strong>Accept</strong>.
+          </li>
+        </ol>
+      </div>
+
+      <div id="ios" class="tab2-content">
+        <header style="margin-bottom: var(--typography-spacing-vertical)">
+          <h4 style="margin-bottom: 0">iOS and iPadOS</h4>
+          <small style="font-size: 15px">
+            Requires iOS/iPadOS 14 or higher.
+          </small>
+        </header>
+        <ol>
+          <li>
+            Download our <strong>Apple Configuration Profile</strong> to enable
+            <strong>Encrypted DNS</strong>
+            feature.
+          </li>
+          <li>
+            You can download configuration for
+            <a href="/apple/puredns-https.mobileconfig">DoH</a> and/or
+            <a href="/apple/puredns-tls.mobileconfig">DoT</a>.
+          </li>
+          <li>Open the <strong>Settings</strong> app.</li>
+          <li>Tap <strong>Profile Downloaded</strong>.</li>
+          <li>
+            Tap <strong>Install</strong> in the upper-right corner, then follow
+            the onscreen instructions.
+          </li>
+        </ol>
+
+        <header style="margin-top: 2rem; margin-bottom: 1rem">
+          <h4 style="margin-bottom: 0">DNSCloak</h4>
+        </header>
+        <p>
+          <a
+            href="https://apps.apple.com/us/app/dnscloak-secure-dns-client/id1452162351"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              src="/img/app-store.svg"
+              alt="Get DNSCloak app on the App Store"
+              width="172"
+            />
+          </a>
+        </p>
+        <ol>
+          <li>Install <strong>DNSCloak</strong> app from the App Store.</li>
+          <li>Search <strong>puredns</strong> using search bar.</li>
+          <li>
+            Tap <strong>puredns-doh</strong> and
+            <strong>puredns-doh-ipv6</strong>.
+          </li>
+          <li>Tap <strong>Use this server</strong>.</li>
+        </ol>
+      </div>
+
+      <div id="linux" class="tab2-content">
+        <header style="margin-bottom: var(--typography-spacing-vertical)">
+          <h4 style="margin-bottom: 0">Knot Resolver</h4>
+        </header>
+        <ol>
+          <li>
+            Install
+            <a
+              href="https://www.knot-resolver.cz/download/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Knot Resolver</a
+            >.
+          </li>
+          <li>
+            Use the following in
+            <strong>/etc/knot-resolver/kresd.conf</strong>:
+          </li>
+        </ol>
+        <pre><code>policy.add(policy.all(policy.TLS_FORWARD({
+  {'108.137.44.39', hostname='puredns.org'},
+  {'108.137.44.9', hostname='puredns.org'},
+  {'2406:da19:66f:e810:2f1b:9ce8:a5f1:132f', hostname='puredns.org'},
+  {'2406:da19:66f:e810:92ad:7e02:fa25:38b9', hostname='puredns.org'}
+})))</code></pre>
+
+        <header
+          style="
+            margin-top: 2rem;
+            margin-bottom: var(--typography-spacing-vertical);
+          "
+        >
+          <h4 style="margin-bottom: 0">Stubby</h4>
+        </header>
+        <ol>
+          <li>
+            Install
+            <a
+              href="https://dnsprivacy.org/dns_privacy_daemon_-_stubby/#installation"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Stubby</a
+            >.
+          </li>
+          <li>Use the following in <strong>stubby.yml</strong>:</li>
+        </ol>
+        <pre><code>round_robin_upstreams: 1
+  upstream_recursive_servers:
+  - address_data: 108.137.44.39
+  tls_auth_name: "puredns.org"
+  - address_data: 108.137.44.9
+  tls_auth_name: "puredns.org"
+  - address_data: 2406:da19:66f:e810:2f1b:9ce8:a5f1:132f
+  tls_auth_name: "puredns.org"
+  - address_data: 2406:da19:66f:e810:92ad:7e02:fa25:38b9
+  tls_auth_name: "puredns.org"</code></pre>
+
+        <header
+          style="
+            margin-top: 2rem;
+            margin-bottom: var(--typography-spacing-vertical);
+          "
+        >
+          <h4 style="margin-bottom: 0">Unbound</h4>
+        </header>
+        <ol>
+          <li>
+            Install
+            <a
+              href="https://www.nlnetlabs.nl/projects/unbound/download/"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Unbound</a
+            >.
+          </li>
+          <li>Use the following in <strong>unbound.conf</strong>:</li>
+        </ol>
+        <pre><code>forward-zone:
+  name: "."
+  forward-tls-upstream: yes
+  forward-addr: 108.137.44.39#puredns.org
+  forward-addr: 108.137.44.9#puredns.org
+  forward-addr: 2406:da19:66f:e810:2f1b:9ce8:a5f1:132f#puredns.org
+  forward-addr: 2406:da19:66f:e810:92ad:7e02:fa25:38b9#puredns.org</code></pre>
+
+        <header
+          style="
+            margin-top: 2rem;
+            margin-bottom: var(--typography-spacing-vertical);
+          "
+        >
+          <h4 style="margin-bottom: 0">DNSCrypt</h4>
+        </header>
+        <ol>
+          <li>
+            Install
+            <a
+              href="https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Installation"
+              rel="noopener noreferrer"
+              target="_blank"
+              >DNSCrypt</a
+            >.
+          </li>
+          <li>Use the following in <strong>dnscrypt-proxy.toml</strong>:</li>
+        </ol>
+        <pre><code>server_names = ['PureDNS']
+
+[static]
+  [static.'PureDNS']
+  stamp = 'sdns://AgcAAAAAAAAAAAALcHVyZWRucy5vcmcKL2Rucy1xdWVyeQ'</code></pre>
+
+        <header
+          style="
+            margin-top: 2rem;
+            margin-bottom: var(--typography-spacing-vertical);
+          "
+        >
+          <h4 style="margin-bottom: 0">cloudflared</h4>
+        </header>
+        <ol>
+          <li>
+            Install
+            <a
+              href="https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/"
+              rel="noopener noreferrer"
+              target="_blank"
+              >cloudflared</a
+            >.
+          </li>
+          <li>
+            Use the following in
+            <strong>/usr/local/etc/cloudflared/config.yml</strong>:
+          </li>
+        </ol>
+        <pre><code>proxy-dns: true
+proxy-dns-upstream:
+  - https://puredns.org/dns-query</code></pre>
+      </div>
+
+      <div id="windows" class="tab2-content">
+        <header style="margin-bottom: var(--typography-spacing-vertical)">
+          <h4 style="margin-bottom: 0">Encrypted DNS</h4>
+          <small style="font-size: 15px">
+            Requires Windows 10 or higher.
+          </small>
+        </header>
+        <ol>
+          <li>Open <strong>Settings</strong>.</li>
+          <li>
+            Navigate to <strong>Network & internet</strong> →
+            <strong>Status</strong>.
+          </li>
+          <li>Click on <strong>Properties</strong>.</li>
+          <li>
+            Click <strong>Edit</strong> under <strong>DNS settings</strong>.
+          </li>
+          <li>
+            Select the <strong>Manual</strong> option, and then specify
+            <strong>Preferred DNS</strong> and <strong>Alternate DNS</strong> IP
+            addresses with <strong class="monospace">108.137.44.39</strong> for
+            <strong>Primary</strong> and
+            <strong class="monospace">108.137.44.9</strong> for
+            <strong>Alternate</strong>.
+          </li>
+          <li>
+            Select <strong>Encrypted only (DNS over HTTPS)</strong> for both.
+          </li>
+        </ol>
+        <header
+          style="
+            margin-top: 2rem;
+            margin-bottom: var(--typography-spacing-vertical);
+          "
+        >
+          <h4 style="margin-bottom: 0">YogaDNS</h4>
+        </header>
+        <ol>
+          <li>
+            Install
+            <a
+              href="https://yogadns.com/download/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              YogaDNS</a
+            >.
+          </li>
+          <li>
+            Go to <strong>Configuration</strong> →
+            <strong>DNS Servers</strong> → <strong>Add</strong>.
+          </li>
+          <li>
+            Enter <strong>PureDNS</strong> in the
+            <strong>User friendly name</strong>.
+          </li>
+          <li>
+            For <strong>Protocol</strong> you can select
+            <strong>DNS-over-HTTPS</strong>.
+          </li>
+          <li>
+            Specify the <strong>URL</strong> with
+            <strong>https://puredns.org/dns-query</strong>.
+          </li>
+          <li>
+            Click <strong>Check</strong> to quickly test the server and click
+            <strong>OK</strong>.
+          </li>
+        </ol>
+
+        <p>
+          See
+          <a
+            href="https://yogadns.com/docs/#servers"
+            rel="noopener noreferrer"
+            target="_blank"
+            >more details</a
+          >
+          on how to configure YogaDNS.
+        </p>
+      </div>
+
+      <div id="macos" class="tab2-content">
+        <header style="margin-bottom: var(--typography-spacing-vertical)">
+          <h4 style="margin-bottom: 0">macOS</h4>
+          <small style="font-size: 15px">
+            Requires macOS Big Sur or newer.
+          </small>
+        </header>
+        <ol>
+          <li>
+            Download our <strong>Apple Configuration Profile</strong> to enable
+            <strong>Encrypted DNS</strong>
+            feature.
+          </li>
+          <li>
+            You can download configuration for
+            <a href="/apple/puredns-https.mobileconfig">DoH</a> and/or
+            <a href="/apple/puredns-tls.mobileconfig">DoT</a>.
+          </li>
+          <li>Open the downloaded <strong>.mobileconfig</strong> file.</li>
+          <li>Open <strong>System Preferences</strong>.</li>
+          <li>Go to <strong>Profiles</strong>.</li>
+          <li>Click <strong>Install</strong>.</li>
+        </ol>
+      </div>
+
+      <div id="browsers" class="tab2-content">
+        <header style="margin-bottom: var(--typography-spacing-vertical)">
+          <h4 style="margin-bottom: 0">Google Chrome</h4>
+        </header>
+        <ol>
+          <li>Go to <strong>Settings</strong>.</li>
+          <li>
+            In the <strong>Privacy and security</strong> section, click on
+            <strong>Security</strong>.
+          </li>
+          <li>
+            In the <strong>Advanced</strong> section, enable
+            <strong>Use secure DNS</strong>.
+          </li>
+          <li>
+            Select With: Custom, then enter
+            <strong>https://puredns.org/dns-query</strong>.
+          </li>
+        </ol>
+
+        <header
+          style="
+            margin-top: 2rem;
+            margin-bottom: var(--typography-spacing-vertical);
+          "
+        >
+          <h4 style="margin-bottom: 0">Firefox</h4>
+        </header>
+        <ol>
+          <li>Open <strong>Preferences</strong>.</li>
+          <li>
+            Scroll down to the <strong>Network Settings</strong> section and
+            click on <strong>Settings</strong>.
+          </li>
+          <li>Scroll down and check <strong>Enable DNS over HTTPS</strong>.</li>
+          <li>
+            Select Custom, enter
+            <strong>https://puredns.org/dns-query</strong> and click
+            <strong>OK</strong>.
+          </li>
+        </ol>
+
+        <header
+          style="
+            margin-top: 2rem;
+            margin-bottom: var(--typography-spacing-vertical);
+          "
+        >
+          <h4 style="margin-bottom: 0">Microsoft Edge</h4>
+        </header>
+        <ol>
+          <li>Open <strong>Settings</strong>.</li>
+          <li>
+            Go to the
+            <strong>Privacy, search, and services</strong> section.
+          </li>
+          <li>
+            Under <strong>Security</strong>, enable
+            <strong>Use secure DNS</strong> to specify how to lookup the network
+            address for websites.
+          </li>
+          <li>
+            Select <strong>Choose a service provider</strong>, then enter
+            <strong>https://puredns.org/dns-query</strong>.
+          </li>
+        </ol>
+
+        <header
+          style="
+            margin-top: 2rem;
+            margin-bottom: var(--typography-spacing-vertical);
+          "
+        >
+          <h4 style="margin-bottom: 0">Brave</h4>
+        </header>
+        <ol>
+          <li>Open <strong>Settings</strong>.</li>
+          <li>
+            In the <strong>Privacy and security</strong> section (under
+            Additional settings), go to <strong>Security</strong>.
+          </li>
+          <li>
+            In the <strong>Advanced</strong> section, enable
+            <strong>Use secure DNS</strong>.
+          </li>
+          <li>
+            Select With: Custom, then enter
+            <strong>https://puredns.org/dns-query</strong>.
+          </li>
+        </ol>
+      </div>
+
+      <div id="routers" class="tab2-content">
+        <header style="margin-bottom: var(--typography-spacing-vertical)">
+          <h4 style="margin-bottom: 0">IPv4 &amp; IPv6</h4>
+        </header>
+        <ol>
+          <li>
+            Sign in to your
+            <strong>router's web-based administration</strong>, usually at the
+            following address: <code>http://192.168.1.1</code>.
+          </li>
+          <li>Find the <strong>DNS settings</strong> inside the interface.</li>
+          <li>
+            <p>Change addresses (if any), with <strong>IPv4</strong>:</p>
+            <pre><code>108.137.44.39
+108.137.44.9</code></pre>
+            <p>or with <strong>IPv6</strong> use addresses below:</p>
+            <pre><code>2406:da19:66f:e810:2f1b:9ce8:a5f1:132f
+2406:da19:66f:e810:92ad:7e02:fa25:38b9</code></pre>
+          </li>
+          <li>Click <strong>Save</strong> (or similar).</li>
+        </ol>
+
+        <header
+          style="
+            margin-top: 2rem;
+            margin-bottom: var(--typography-spacing-vertical);
+          "
+        >
+          <h4 style="margin-bottom: 0">pfSense</h4>
+        </header>
+        <ol>
+          <li>
+            Navigate to <strong>Services</strong> →
+            <strong>DNS Resolver</strong> and on the tab
+            <strong>General Settings</strong> scroll down to the
+            <strong>Custom Options</strong> box.
+          </li>
+          <li>Enter the following lines:</li>
+        </ol>
+
+        <pre><code>forward-zone:
+  name: "."
+  forward-tls-upstream: yes
+  forward-addr: 108.137.44.39#puredns.org
+  forward-addr: 108.137.44.9#puredns.org
+  forward-addr: 2406:da19:66f:e810:2f1b:9ce8:a5f1:132f#puredns.org
+  forward-addr: 2406:da19:66f:e810:92ad:7e02:fa25:38b9#puredns.org</code></pre>
+
+        <header
+          style="
+            margin-top: 2rem;
+            margin-bottom: var(--typography-spacing-vertical);
+          "
+        >
+          <h4 style="margin-bottom: 0">MikroTik</h4>
+        </header>
+        <p>Run the following:</p>
+
+        <pre><code>/tool fetch url=https://curl.se/ca/cacert.pem
+/certificate import file-name=cacert.pem
+/ip dns set servers=
+/ip dns static add name=puredns.org address=108.137.44.39 type=A
+/ip dns static add name=puredns.org address=108.137.44.9 type=A
+/ip dns static add name=puredns.org address=2406:da19:66f:e810:2f1b:9ce8:a5f1:132f type=AAAA
+/ip dns static add name=puredns.org address=2406:da19:66f:e810:92ad:7e02:fa25:38b9 type=AAAA
+/ip dns set use-doh-server="https://puredns.org/dns-query" verify-doh-cert=yes</code></pre>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="support-us" style="margin-top: 6rem">
+  <header>
+    <div class="container text-center">
+      <h2>Support the Development</h2>
+      <p>
+        You can use our service free of charge, but if you happen to think to
+        help make PureDNS even better, please donate via the following links.
+      </p>
+      <a
+        href="https://saweria.co/fransallen"
+        role="button"
+        class="secondary"
+        aria-label="Donate via Saweria"
+        rel="noopener noreferrer"
+        target="_blank"
+        style="margin-right: 0.5rem"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="32"
+          height="32"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 15a4.987 4.987 0 0 1-1.828-.345l-2.236 2.237A7.963 7.963 0 0 0 12 20a7.963 7.963 0 0 0 4.064-1.108l-2.236-2.237A4.987 4.987 0 0 1 12 17zm-8-5c0 1.484.404 2.873 1.108 4.064l2.237-2.236A4.987 4.987 0 0 1 7 12c0-.645.122-1.261.345-1.828L5.108 7.936A7.963 7.963 0 0 0 4 12zm14.892-4.064l-2.237 2.236c.223.567.345 1.183.345 1.828s-.122 1.261-.345 1.828l2.237 2.236A7.963 7.963 0 0 0 20 12a7.963 7.963 0 0 0-1.108-4.064zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-5a7.963 7.963 0 0 0-4.064 1.108l2.236 2.237A4.987 4.987 0 0 1 12 7c.645 0 1.261.122 1.828.345l2.236-2.237A7.963 7.963 0 0 0 12 4z"
+          />
+        </svg>
+        Saweria
+      </a>
+
+      <a
+        href="https://www.patreon.com/fransallen"
+        role="button"
+        class="secondary outline"
+        aria-label="Donate via Patreon"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="36"
+          height="36"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M15 17a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15zm0-2a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM2 2h5v20H2V2zm2 2v16h1V4H4z"
+          />
+        </svg>
+        Patreon
+      </a>
+    </div>
+  </header>
+</section>
