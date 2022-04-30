@@ -41,6 +41,10 @@ title: PureDNS | Secure And Fast Internet
 
     {%- set js %}
     {% include "js/app.js" %}
+
+    {% if page.url == "/open/" %}
+    {% include "js/leaderboard.js" %}
+    {% endif %}
     {% endset %}
     <script>
       {{ js | jsmin | safe }}
