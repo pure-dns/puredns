@@ -1,4 +1,4 @@
-fetch("/data/leaderboard.json")
+fetch("https://api.puredns.org/leaderboard.json")
   .then((response) => response.json())
   .then((data) => createTable(data.data))
   .catch((error) => console.log(error));

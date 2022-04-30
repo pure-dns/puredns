@@ -45,7 +45,6 @@ module.exports = function (eleventyConfig) {
 
   //eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-  eleventyConfig.addPassthroughCopy("src/data");
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/apple");
 
