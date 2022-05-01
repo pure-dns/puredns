@@ -29,6 +29,11 @@ layout: layouts/base.njk
         <span style="margin-left: 5px">Donate now</span>
       </a>
 
+      <div style="margin-top: 3rem">
+        <progress id="progress" value="100000" max="14000000"></progress>
+        <small>We are currently at <strong><span id="currentTotalAmount">Rp -</span></strong>, still <strong><span id="targetTotalAmount">Rp -</span></strong> more to go to make PureDNS financially stable. Progress is shown in percentage (%).</small>
+      </div>
+
       {% include "components/metrics.njk" %}
   </section>
 
