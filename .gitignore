@@ -1,3 +1,4 @@
+.vercel
 _site
 node_modules
 package-lock.json
