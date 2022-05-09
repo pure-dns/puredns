@@ -12,6 +12,10 @@
           "value": "max-age=63072000; includeSubDomains; preload"
         },
         {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
         },
