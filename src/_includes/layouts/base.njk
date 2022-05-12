@@ -13,12 +13,8 @@ title: PureDNS | Secure And Fast Internet
     <title>{{ subtitleText }}</title>
     <meta name="description" content="{{ subtitleText }}" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.statically.io/gh/picocss/pico/f9e97c0b/css/pico.min.css"
-    />
-
     {%- set css %}
+    {% include "css/pico.css" %}
     {% include "css/app.css" %}
     {% endset %}
     <style>
