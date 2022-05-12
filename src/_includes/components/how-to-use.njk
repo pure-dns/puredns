@@ -1,108 +1,3 @@
----
-layout: layouts/base.njk
-permalink: /
----
-
-<main id="setup-guide">
-  <section>
-    <div class="container">
-      <div class="grid">
-        <article class="tab grid" data-theme="dark">
-          <button class="tab-links active" onclick="openTab(event, 'dot')">
-            DNS-over-TLS
-          </button>
-          <button class="tab-links" onclick="openTab(event, 'doh')">
-            DNS-over-HTTPS
-          </button>
-          <button class="tab-links" onclick="openTab(event, 'dnscrypt')">
-            DNSCrypt
-          </button>
-          <button class="tab-links" onclick="openTab(event, 'dns')">DNS</button>
-        </article>
-        <article class="grid">
-          <div id="dot" class="tab-content" style="display: block">
-            <h3>Using DNS-over-TLS</h3>
-            <p>
-              We provide DNS-over-TLS support on standard port
-              <strong>853</strong>. To start using PureDNS with DNS-over-TLS,
-              you can use the following address.
-            </p>
-
-            <pre><code>puredns.org</code></pre>
-
-            <p>
-              Learn how to configure DNS-over-TLS on your device with the setup
-              guide below.
-            </p>
-          </div>
-
-          <div id="doh" class="tab-content">
-            <h3>Using DNS-over-HTTPS</h3>
-            <p>
-              DNS-over-HTTPS support is available on standard port
-              <strong>443</strong>. Our DoH servers support
-              <strong>HTTP/2</strong> and <strong>HTTP/3</strong> for fast
-              lookup results and to avoid blocking from ISPs.
-            </p>
-
-            <pre><code>https://puredns.org/dns-query</code></pre>
-          </div>
-
-          <div id="dnscrypt" class="tab-content">
-            <h3>Using DNSCrypt</h3>
-            <p>
-              PureDNS can be used with
-              <a
-                href="https://github.com/DNSCrypt/dnscrypt-proxy"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                DNSCrypt
-              </a>
-              as a client by using <strong>DNS Stamps</strong>. Use the
-              following DNS stamp in your DNSCrypt configuration.
-            </p>
-
-            <pre><code>sdns://AgcAAAAAAAAAAAALcHVyZWRucy5vcmcKL2Rucy1xdWVyeQ</code></pre>
-
-            <p>
-              You can verify the DNS stamp above using
-              <a
-                href="https://dnscrypt.info/stamps/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                this tool
-              </a>
-              provided by the official DNSCrypt team.
-            </p>
-          </div>
-
-          <div id="dns" class="tab-content">
-            <h3>Using Plain DNS</h3>
-            <p>
-              While we don't recommend using unencrypted DNS (standard port
-              <strong>53</strong>) for private internet, there are some of us
-              who want this support as part of their implementation; like using
-              PureDNS on Routers. Use the IP addresses below to start using
-              PureDNS.
-            </p>
-
-            <p>For IPv4:</p>
-            <pre><code>108.137.44.39
-108.137.44.9</code></pre>
-
-            <p>For IPv6:</p>
-
-            <pre><code>2406:da19:66f:e810:2f1b:9ce8:a5f1:132f
-2406:da19:66f:e810:92ad:7e02:fa25:38b9</code></pre>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-</main>
-
 <section id="how-to-use">
   <div class="container" style="max-width: 35rem">
     <div
@@ -116,14 +11,18 @@ permalink: /
       <a class="tab2-links" onclick="openTab2(event, 'linux')">Linux</a>
       <a class="tab2-links" onclick="openTab2(event, 'windows')">Windows</a>
       <a class="tab2-links" onclick="openTab2(event, 'macos')">macOS</a>
-      <a class="tab2-links" onclick="openTab2(event, 'browsers')"> Browsers </a>
+      <a class="tab2-links" onclick="openTab2(event, 'browsers')">
+        Browsers
+      </a>
       <a class="tab2-links" onclick="openTab2(event, 'routers')">Routers</a>
     </div>
     <article style="margin-top: 2rem; box-shadow: none; padding: 0">
       <div id="android" class="tab2-content" style="display: block">
         <header style="margin-bottom: var(--typography-spacing-vertical)">
           <h4 style="margin-bottom: 0">Private DNS</h4>
-          <small style="font-size: 15px"> Requires Android 9 or higher </small>
+          <small style="font-size: 15px">
+            Requires Android 9 or higher
+          </small>
         </header>
         <ol>
           <li>
@@ -136,7 +35,8 @@ permalink: /
             <strong>Private DNS provider hostname</strong> option.
           </li>
           <li>
-            Enter <strong>puredns.org</strong> and click <strong>Save</strong>.
+            Enter <strong>puredns.org</strong> and click
+            <strong>Save</strong>.
           </li>
         </ol>
 
@@ -179,7 +79,8 @@ permalink: /
         </header>
         <ol>
           <li>
-            Download our <strong>Apple Configuration Profile</strong> to enable
+            Download our <strong>Apple Configuration Profile</strong> to
+            enable
             <strong>Encrypted DNS</strong>
             feature.
           </li>
@@ -188,11 +89,13 @@ permalink: /
             <a href="/apple/puredns-https.mobileconfig">DoH</a> and/or
             <a href="/apple/puredns-tls.mobileconfig">DoT</a>.
           </li>
-          <li>Go to <strong>Settings → General → VPN & Device Mangement</strong></li>
+          <li>
+            Go to <strong>Settings → General → VPN & Device Mangement</strong>
+          </li>
           <li>Tap the <strong>Downloaded Profile</strong>.</li>
           <li>
-            Tap <strong>Install</strong> in the upper-right corner, then follow
-            the onscreen instructions.
+            Tap <strong>Install</strong> in the upper-right corner, then
+            follow the onscreen instructions.
           </li>
         </ol>
 
@@ -382,8 +285,9 @@ proxy-dns-upstream:
           </li>
           <li>
             Select the <strong>Manual</strong> option, and then specify
-            <strong>Preferred DNS</strong> and <strong>Alternate DNS</strong> IP
-            addresses with <strong class="monospace">108.137.44.39</strong> for
+            <strong>Preferred DNS</strong> and
+            <strong>Alternate DNS</strong> IP addresses with
+            <strong class="monospace">108.137.44.39</strong> for
             <strong>Primary</strong> and
             <strong class="monospace">108.137.44.9</strong> for
             <strong>Alternate</strong>.
@@ -454,7 +358,8 @@ proxy-dns-upstream:
         </header>
         <ol>
           <li>
-            Download our <strong>Apple Configuration Profile</strong> to enable
+            Download our <strong>Apple Configuration Profile</strong> to
+            enable
             <strong>Encrypted DNS</strong>
             feature.
           </li>
@@ -504,7 +409,9 @@ proxy-dns-upstream:
             Scroll down to the <strong>Network Settings</strong> section and
             click on <strong>Settings</strong>.
           </li>
-          <li>Scroll down and check <strong>Enable DNS over HTTPS</strong>.</li>
+          <li>
+            Scroll down and check <strong>Enable DNS over HTTPS</strong>.
+          </li>
           <li>
             Select Custom, enter
             <strong>https://puredns.org/dns-query</strong> and click
@@ -528,8 +435,8 @@ proxy-dns-upstream:
           </li>
           <li>
             Under <strong>Security</strong>, enable
-            <strong>Use secure DNS</strong> to specify how to lookup the network
-            address for websites.
+            <strong>Use secure DNS</strong> to specify how to lookup the
+            network address for websites.
           </li>
           <li>
             Select <strong>Choose a service provider</strong>, then enter
@@ -572,7 +479,9 @@ proxy-dns-upstream:
             <strong>router's web-based administration</strong>, usually at the
             following address: <code>http://192.168.1.1</code>.
           </li>
-          <li>Find the <strong>DNS settings</strong> inside the interface.</li>
+          <li>
+            Find the <strong>DNS settings</strong> inside the interface.
+          </li>
           <li>
             <p>Change addresses (if any), with <strong>IPv4</strong>:</p>
             <pre><code>108.137.44.39
@@ -631,60 +540,4 @@ proxy-dns-upstream:
       </div>
     </article>
   </div>
-</section>
-
-<section id="support-us" style="margin-top: 6rem">
-  <header>
-    <div class="container text-center">
-      <h2>Support the Development</h2>
-      <p>
-        You can use our service free of charge, but if you happen to think to
-        help make PureDNS even better, please donate via the following links.
-      </p>
-      <a
-        href="https://saweria.co/fransallen"
-        role="button"
-        class="secondary"
-        aria-label="Donate via Saweria"
-        rel="noopener noreferrer"
-        target="_blank"
-        style="margin-right: 0.5rem"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="32"
-          height="32"
-        >
-          <path fill="none" d="M0 0h24v24H0z" />
-          <path
-            d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 15a4.987 4.987 0 0 1-1.828-.345l-2.236 2.237A7.963 7.963 0 0 0 12 20a7.963 7.963 0 0 0 4.064-1.108l-2.236-2.237A4.987 4.987 0 0 1 12 17zm-8-5c0 1.484.404 2.873 1.108 4.064l2.237-2.236A4.987 4.987 0 0 1 7 12c0-.645.122-1.261.345-1.828L5.108 7.936A7.963 7.963 0 0 0 4 12zm14.892-4.064l-2.237 2.236c.223.567.345 1.183.345 1.828s-.122 1.261-.345 1.828l2.237 2.236A7.963 7.963 0 0 0 20 12a7.963 7.963 0 0 0-1.108-4.064zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-5a7.963 7.963 0 0 0-4.064 1.108l2.236 2.237A4.987 4.987 0 0 1 12 7c.645 0 1.261.122 1.828.345l2.236-2.237A7.963 7.963 0 0 0 12 4z"
-          />
-        </svg>
-        Saweria
-      </a>
-
-      <a
-        href="https://www.patreon.com/fransallen"
-        role="button"
-        class="secondary outline"
-        aria-label="Donate via Patreon"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="36"
-          height="36"
-        >
-          <path fill="none" d="M0 0h24v24H0z" />
-          <path
-            d="M15 17a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15zm0-2a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM2 2h5v20H2V2zm2 2v16h1V4H4z"
-          />
-        </svg>
-        Patreon
-      </a>
-    </div>
-  </header>
 </section>

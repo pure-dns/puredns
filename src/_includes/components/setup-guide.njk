@@ -1,0 +1,97 @@
+<section id="setup-guide">
+  <div class="container">
+    <div class="grid">
+      <article class="tab grid" data-theme="dark">
+        <button class="tab-links active" onclick="openTab(event, 'dot')">
+          DNS-over-TLS
+        </button>
+        <button class="tab-links" onclick="openTab(event, 'doh')">
+          DNS-over-HTTPS
+        </button>
+        <button class="tab-links" onclick="openTab(event, 'dnscrypt')">
+          DNSCrypt
+        </button>
+        <button class="tab-links" onclick="openTab(event, 'dns')">DNS</button>
+      </article>
+      <article class="grid">
+        <div id="dot" class="tab-content" style="display: block">
+          <h3>Using DNS-over-TLS</h3>
+          <p>
+            We provide DNS-over-TLS support on standard port
+            <strong>853</strong>. To start using PureDNS with DNS-over-TLS,
+            you can use the following address.
+          </p>
+
+          <pre><code>puredns.org</code></pre>
+
+          <p>
+            Learn how to configure DNS-over-TLS on your device with the setup
+            guide below.
+          </p>
+        </div>
+
+        <div id="doh" class="tab-content">
+          <h3>Using DNS-over-HTTPS</h3>
+          <p>
+            DNS-over-HTTPS support is available on standard port
+            <strong>443</strong>. Our DoH servers support
+            <strong>HTTP/2</strong> and <strong>HTTP/3</strong> for fast
+            lookup results and to avoid blocking from ISPs.
+          </p>
+
+          <pre><code>https://puredns.org/dns-query</code></pre>
+        </div>
+
+        <div id="dnscrypt" class="tab-content">
+          <h3>Using DNSCrypt</h3>
+          <p>
+            PureDNS can be used with
+            <a
+              href="https://github.com/DNSCrypt/dnscrypt-proxy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              DNSCrypt
+            </a>
+            as a client by using <strong>DNS Stamps</strong>. Use the
+            following DNS stamp in your DNSCrypt configuration.
+          </p>
+
+          <pre><code>sdns://AgcAAAAAAAAAAAALcHVyZWRucy5vcmcKL2Rucy1xdWVyeQ</code></pre>
+
+          <p>
+            You can verify the DNS stamp above using
+            <a
+              href="https://dnscrypt.info/stamps/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              this tool
+            </a>
+            provided by the official DNSCrypt team.
+          </p>
+        </div>
+
+        <div id="dns" class="tab-content">
+          <h3>Using Plain DNS</h3>
+          <p>
+            While we don't recommend using unencrypted DNS (standard port
+            <strong>53</strong>) for private internet, there are some of us
+            who want this support as part of their implementation; like using
+            PureDNS on Routers. Use the IP addresses below to start using
+            PureDNS.
+          </p>
+
+          <p>For IPv4:</p>
+          <pre><code>108.137.44.39
+108.137.44.9</code></pre>
+
+          <p>For IPv6:</p>
+
+          <pre><code>2406:da19:66f:e810:2f1b:9ce8:a5f1:132f
+2406:da19:66f:e810:92ad:7e02:fa25:38b9</code></pre>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
