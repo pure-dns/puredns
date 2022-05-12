@@ -80,8 +80,32 @@ header :is(h1, h2) {
   display: none;
 }
 
-footer .grid {
-  grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+body > footer {
+  background-color: var(--background-color);
+}
+
+body > footer ul {
+  padding: 0;
+}
+
+body > footer ul:first-of-type {
+  margin-bottom: calc(var(--spacing) * 0.5);
+}
+
+body > footer ul:first-of-type a {
+  text-decoration: none;
+}
+
+body > footer ul li {
+  color: var(--muted-color);
+  display: inline-block;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+body > footer li:not(:first-child)::before {
+  margin: 0 0.25rem;
+  content: "·";
 }
 
 .monospace {
@@ -114,6 +138,14 @@ footer .grid {
 @media (max-width: 600px) {
   .sm\:p-0 {
     padding: 0 !important;
+  }
+
+  body > footer ul:last-of-type li {
+    display: block;
+  }
+
+  body > footer ul:last-of-type li:not(:first-child)::before {
+    display: none;
   }
 }
 
