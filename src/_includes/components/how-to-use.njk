@@ -147,10 +147,10 @@
           </li>
         </ol>
         <pre><code>policy.add(policy.all(policy.TLS_FORWARD({
-  {'108.137.44.39', hostname='puredns.org'},
-  {'108.137.44.9', hostname='puredns.org'},
-  {'2406:da19:66f:e810:2f1b:9ce8:a5f1:132f', hostname='puredns.org'},
-  {'2406:da19:66f:e810:92ad:7e02:fa25:38b9', hostname='puredns.org'}
+  {'{{ ipv4_1 }}', hostname='puredns.org'},
+  {'{{ ipv4_2 }}', hostname='puredns.org'},
+  {'{{ ipv6_1 }}', hostname='puredns.org'},
+  {'{{ ipv6_2 }}', hostname='puredns.org'}
 })))</code></pre>
 
         <header
@@ -175,13 +175,13 @@
         </ol>
         <pre><code>round_robin_upstreams: 1
   upstream_recursive_servers:
-  - address_data: 108.137.44.39
+  - address_data: {{ ipv4_1 }}
   tls_auth_name: "puredns.org"
-  - address_data: 108.137.44.9
+  - address_data: {{ ipv4_2 }}
   tls_auth_name: "puredns.org"
-  - address_data: 2406:da19:66f:e810:2f1b:9ce8:a5f1:132f
+  - address_data: {{ ipv6_1 }}
   tls_auth_name: "puredns.org"
-  - address_data: 2406:da19:66f:e810:92ad:7e02:fa25:38b9
+  - address_data: {{ ipv6_2 }}
   tls_auth_name: "puredns.org"</code></pre>
 
         <header
@@ -207,10 +207,10 @@
         <pre><code>forward-zone:
   name: "."
   forward-tls-upstream: yes
-  forward-addr: 108.137.44.39#puredns.org
-  forward-addr: 108.137.44.9#puredns.org
-  forward-addr: 2406:da19:66f:e810:2f1b:9ce8:a5f1:132f#puredns.org
-  forward-addr: 2406:da19:66f:e810:92ad:7e02:fa25:38b9#puredns.org</code></pre>
+  forward-addr: {{ ipv4_1 }}#puredns.org
+  forward-addr: {{ ipv4_2 }}#puredns.org
+  forward-addr: {{ ipv6_1 }}#puredns.org
+  forward-addr: {{ ipv6_2 }}#puredns.org</code></pre>
 
         <header
           style="
@@ -274,6 +274,12 @@ proxy-dns-upstream:
           </small>
         </header>
         <ol>
+          <li>Open <strong>Windows Powershell</strong> as <strong>Administrator</strong>.</li>
+          <li>
+            <p>Run the following to add PureDNS to the <strong>list of known servers</strong>.</p>
+            <pre><code>Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_1 }} -DohTemplate https://puredns.org/dns-query 
+Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://puredns.org/dns-query</code></pre>
+          </li>
           <li>Open <strong>Settings</strong>.</li>
           <li>
             Navigate to <strong>Network & internet</strong> →
@@ -287,9 +293,9 @@ proxy-dns-upstream:
             Select the <strong>Manual</strong> option, and then specify
             <strong>Preferred DNS</strong> and
             <strong>Alternate DNS</strong> IP addresses with
-            <strong class="monospace">108.137.44.39</strong> for
+            <strong class="monospace">{{ ipv4_1 }}</strong> for
             <strong>Primary</strong> and
-            <strong class="monospace">108.137.44.9</strong> for
+            <strong class="monospace">{{ ipv4_2 }}</strong> for
             <strong>Alternate</strong>.
           </li>
           <li>
@@ -484,11 +490,11 @@ proxy-dns-upstream:
           </li>
           <li>
             <p>Change addresses (if any), with <strong>IPv4</strong>:</p>
-            <pre><code>108.137.44.39
-108.137.44.9</code></pre>
+            <pre><code>{{ ipv4_1 }}
+{{ ipv4_2 }}</code></pre>
             <p>or with <strong>IPv6</strong> use addresses below:</p>
-            <pre><code>2406:da19:66f:e810:2f1b:9ce8:a5f1:132f
-2406:da19:66f:e810:92ad:7e02:fa25:38b9</code></pre>
+            <pre><code>{{ ipv6_1 }}
+{{ ipv6_2 }}</code></pre>
           </li>
           <li>Click <strong>Save</strong> (or similar).</li>
         </ol>
@@ -514,10 +520,10 @@ proxy-dns-upstream:
         <pre><code>forward-zone:
   name: "."
   forward-tls-upstream: yes
-  forward-addr: 108.137.44.39#puredns.org
-  forward-addr: 108.137.44.9#puredns.org
-  forward-addr: 2406:da19:66f:e810:2f1b:9ce8:a5f1:132f#puredns.org
-  forward-addr: 2406:da19:66f:e810:92ad:7e02:fa25:38b9#puredns.org</code></pre>
+  forward-addr: {{ ipv4_1 }}#puredns.org
+  forward-addr: {{ ipv4_2 }}#puredns.org
+  forward-addr: {{ ipv6_1 }}#puredns.org
+  forward-addr: {{ ipv6_2 }}#puredns.org</code></pre>
 
         <header
           style="
@@ -532,10 +538,10 @@ proxy-dns-upstream:
         <pre><code>/tool fetch url=https://curl.se/ca/cacert.pem
 /certificate import file-name=cacert.pem
 /ip dns set servers=
-/ip dns static add name=puredns.org address=108.137.44.39 type=A
-/ip dns static add name=puredns.org address=108.137.44.9 type=A
-/ip dns static add name=puredns.org address=2406:da19:66f:e810:2f1b:9ce8:a5f1:132f type=AAAA
-/ip dns static add name=puredns.org address=2406:da19:66f:e810:92ad:7e02:fa25:38b9 type=AAAA
+/ip dns static add name=puredns.org address={{ ipv4_1 }} type=A
+/ip dns static add name=puredns.org address={{ ipv4_2 }} type=A
+/ip dns static add name=puredns.org address={{ ipv6_1 }} type=AAAA
+/ip dns static add name=puredns.org address={{ ipv6_2 }} type=AAAA
 /ip dns set use-doh-server="https://puredns.org/dns-query" verify-doh-cert=yes</code></pre>
       </div>
     </article>
