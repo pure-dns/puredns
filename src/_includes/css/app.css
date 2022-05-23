@@ -160,7 +160,7 @@ body > footer li:not(:first-child)::before {
 
   #setup-guide .grid article.tab {
     margin-bottom: 0rem;
-    max-height: 448.5px;
+    max-height: 527px;
   }
 
   .tab2 .tab2-links {
