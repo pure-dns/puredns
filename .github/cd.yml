@@ -1,0 +1,35 @@
+name: Create production site
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    name: Build and tar
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+
+      - name: NPM install
+        run: npm install
+
+      - name: Build 11ty
+        run: npm run build
+
+      - name: tar 11ty
+        run: mv _site && tar cvzf web.tar.gz web
+
+      - name: Release the site
+        uses: JasonEtco/upload-to-release@master
+        with:
+          args: web.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
