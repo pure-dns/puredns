@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build and tar
+    name: Build, tar, and release the site
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +25,7 @@ jobs:
         run: npm run build
 
       - name: tar 11ty
-        run: mv _site && tar cvzf web.tar.gz web
+        run: mv _site web && tar cvzf web.tar.gz web
 
       - name: Release the site
         uses: JasonEtco/upload-to-release@master
