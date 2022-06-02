@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build, tar, and release the site
+    name: Build and deploy 11ty to gh-pages
     runs-on: ubuntu-latest
 
     steps:
@@ -15,6 +15,8 @@ jobs:
 
       - name: Build 11ty
         uses: TartanLlama/actions-eleventy@master
+        with:
+          install_dependencies: true
 
       - name: Release the site
         uses: peaceiris/actions-gh-pages@v3
