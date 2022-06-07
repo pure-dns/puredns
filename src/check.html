@@ -1,0 +1,68 @@
+---
+title: DNS Resolver Checker
+layout: layouts/base.njk
+---
+
+<main>
+  <section>
+    <div class="container text-center">
+      <hgroup style="margin-bottom: 2.5rem">
+        <h1>DNS Resolver Checker</h1>
+        <h3>Information about your connection to PureDNS.</h3>
+      </hgroup>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="max-width: 720px">
+      <article>
+        <table>
+          <tbody>
+            <tr>
+              <td>Using Plain DNS</td>
+              <td id="check-dns">Checking...</td>
+            </tr>
+            <tr>
+              <td>Using DNS-over-TLS</td>
+              <td id="check-dot">Checking...</td>
+            </tr>
+            <tr>
+              <td>Using DNS-over-HTTPS</td>
+              <td id="check-doh">Checking...</td>
+            </tr>
+            <tr>
+              <td>Using DNS-over-QUIC</td>
+              <td id="check-doq">Checking...</td>
+            </tr>
+            <tr>
+              <td>PureDNS Data Center</td>
+              <td id="check-colo">Checking...</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-center">
+          <a href="?recheck=1" role="button" class="contrast">Check again</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="container text-center">
+      <a href="/">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M11.828 12l2.829 2.828-1.414 1.415L9 12l4.243-4.243 1.414 1.415L11.828 12z"
+          />
+        </svg>
+        Back to homepage
+      </a>
+    </div>
+  </section>
+</main>
