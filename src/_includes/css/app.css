@@ -32,11 +32,11 @@ header :is(h1, h2) {
   margin-bottom: var(--spacing);
 }
 
-#setup-guide {
+#overview {
   padding-bottom: 2rem;
 }
 
-#setup-guide .grid article.tab {
+#overview .grid article.tab {
   margin-bottom: 1rem;
 }
 
@@ -150,17 +150,17 @@ body > footer li:not(:first-child)::before {
 }
 
 @media (min-width: 992px) {
-  #setup-guide .grid .grid {
+  #overview .grid .grid {
     grid-template-columns: 1fr;
   }
 
-  #setup-guide .grid:last-child {
+  #overview .grid:last-child {
     grid-column: span 3 / span 3;
   }
 
-  #setup-guide .grid article.tab {
+  #overview .grid article.tab {
     margin-bottom: 0rem;
-    max-height: 527px;
+    max-height: 601px;
   }
 
   .tab2 .tab2-links {

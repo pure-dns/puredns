@@ -1,5 +1,5 @@
 <section id="how-to-use">
-  <div class="container" style="max-width: 35rem">
+  <div class="container" style="max-width: 40rem">
     <div
       class="tab2 grid"
       style="border-bottom: 1px solid #ddd; font-size: 18px; margin: auto"
@@ -15,6 +15,7 @@
         Browsers
       </a>
       <a class="tab2-links" onclick="openTab2(event, 'routers')">Routers</a>
+      <a class="tab2-links" onclick="openTab2(event, 'tor')">Tor</a>
     </div>
     <article style="margin-top: 2rem; box-shadow: none; padding: 0">
       <div id="android" class="tab2-content" style="display: block">
@@ -543,6 +544,16 @@ Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://p
 /ip dns static add name=puredns.org address={{ ipv6_1 }} type=AAAA
 /ip dns static add name=puredns.org address={{ ipv6_2 }} type=AAAA
 /ip dns set use-doh-server="https://puredns.org/dns-query" verify-doh-cert=yes</code></pre>
+      </div>
+
+      <div id="tor" class="tab2-content">
+        <header style="margin-bottom: var(--typography-spacing-vertical)">
+          <h4 style="margin-bottom: 0">DNS over TLS</h4>
+        </header>
+        <p>Tor usually runs on port <code>9050</code> by default. To use our hidden resolver, we recommend using the <a href="http://www.dest-unreach.org/socat/" rel="noopener noreferrer" target="_blank">socat</a> command.</p>
+        <pre><code>PORT=853; socat TCP4-LISTEN:${PORT},reuseaddr,fork SOCKS4A:127.0.0.1:purednsxr4shjkobosrqf7qebwzch3e4ignfr4beq34ngr4nkp2z32id.onion:${PORT},socksport=9050</code></pre>
+        <p>Now you can try to test it by sending a query using the <a href="https://www.knot-dns.cz/docs/2.6/html/man_kdig.html" rel="noopener noreferrer" target="_blank">kdig</a> command.</p>
+        <pre><code>kdig -d +tls +tls-hostname=puredns.org @127.0.0.1 -p 853 puredns.org</code></pre>
       </div>
     </article>
   </div>
