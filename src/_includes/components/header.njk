@@ -34,15 +34,15 @@
   </nav>
 </div>
 
-{% if page.url == "/" or page.url == "/id/" or page.url == "/for-family/" %}
+{% if page.url == "/" or page.url == "/id/" or page.url == "/family/" %}
 
 <header>
   <div class="container">
-    {% if page.url != "/for-family/" %}
+    {% if page.url != "/family/" %}
     <h1>A better Internet with <strong class="text-gradient">privacy-respecting</strong> and <strong class="text-gradient">fast</strong> DNS Resolver</h1>
     <p>Use our DNS over HTTPS/TLS/QUIC/Tor features to encrypt name resolution.</p>
     {% else %}
-    <h1>Protect your family from <strong class="text-gradient">security threats</strong> by <strong class="text-gradient">blocking</strong> malicious domains</h1>
+    <h1>Protect Your Family and Kids from <strong class="text-gradient">Cyber Threats</strong> by <strong class="text-gradient">Blocking</strong> access to Websites with Undesirable Content</h1>
     <p>DNS for Family blocks malware, adware, gambling, fakenews, and NSFW sites using curated lists of bad domains provided by the open source community.</p>
     {% endif %}
 

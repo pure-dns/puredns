@@ -11,7 +11,7 @@
         <button class="tab-links" onclick="openTab(event, 'doq')">
           DNS over QUIC
         </button>
-        {% if page.url != "/for-family/" %}
+        {% if page.url != "/family/" %}
         <button class="tab-links" onclick="openTab(event, 'dns-tor')">
           DNS over Tor
         </button>
@@ -57,7 +57,7 @@
           </p>
         </div>
 
-        {% if page.url != "/for-family/" %}
+        {% if page.url != "/family/" %}
         <div id="dns-tor" class="tab-content">
           <h3>Using DNS over Tor</h3>
           <p>

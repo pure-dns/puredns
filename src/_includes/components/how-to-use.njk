@@ -15,7 +15,7 @@
         Browsers
       </a>
       <a class="tab2-links" onclick="openTab2(event, 'routers')">Routers</a>
-      {% if page.url != "/for-family/" %}
+      {% if page.url != "/family/" %}
       <a class="tab2-links" onclick="openTab2(event, 'tor')">Tor</a>
       {% endif %}
     </div>
@@ -548,7 +548,7 @@ Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://{
 /ip dns set use-doh-server="https://{{ dns_hostname }}/dns-query" verify-doh-cert=yes</code></pre>
       </div>
 
-      {% if page.url != "/for-family/" %}
+      {% if page.url != "/family/" %}
       <div id="tor" class="tab2-content">
         <header style="margin-bottom: var(--typography-spacing-vertical)">
           <h4 style="margin-bottom: 0">DNS over TLS</h4>
