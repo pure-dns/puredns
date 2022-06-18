@@ -38,11 +38,17 @@
 
 <header>
   <div class="container">
+    {% if page.url != "/for-family/" %}
     <h1>A better Internet with <strong class="text-gradient">privacy-respecting</strong> and <strong class="text-gradient">fast</strong> DNS Resolver</h1>
     <p>Use our DNS over HTTPS/TLS/QUIC/Tor features to encrypt name resolution.</p>
+    {% else %}
+    <h1>Protect your family from <strong class="text-gradient">security threats</strong> by <strong class="text-gradient">blocking</strong> malicious domains</h1>
+    <p>DNS for Family blocks malware, adware, gambling, fakenews, and NSFW sites using curated lists of bad domains provided by the open source community.</p>
+    {% endif %}
+
     <p>
       <a
-        href="/#overview"
+        href="#overview"
         role="button"
         class="contrast"
         aria-label="Documentation"

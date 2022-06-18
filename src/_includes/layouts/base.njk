@@ -16,6 +16,9 @@ title: PureDNS | Secure And Fast Internet
     {%- set css %}
     {% include "css/pico.css" %}
     {% include "css/app.css" %}
+    {% if page.url == "/for-family/" %}
+    {% include "css/for-family.css" %}
+    {% endif %}
     {% endset %}
     <style>
       {{ css | cssmin | safe }}
