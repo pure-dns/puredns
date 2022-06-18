@@ -1,5 +1,8 @@
 :root:not([data-theme="dark"]),
 [data-theme="light"] {
+  --font-family: "Ubuntu", system-ui, -apple-system, "Segoe UI", "Roboto",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   --primary: #f1577c;
   --primary-hover: #ef476f;
   --muted-color: #566672;
