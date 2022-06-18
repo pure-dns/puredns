@@ -1,4 +1,4 @@
-<div class="container-fluid" style="margin-top: .5rem">
+<div class="container-fluid" style="padding: .5rem 0">
   <nav class="container">
     <ul>
       <li>
@@ -57,14 +57,25 @@
         Get Started
       </a>
 
+      {% if page.url == "/family/" %}
       <a
-        href="#support-us"
+        href="/"
         role="button"
         class="contrast outline"
         aria-label="Support PureDNS"
       >
-        Support Us
+        For Everyone
       </a>
+      {% else %}
+      <a
+        href="/family/"
+        role="button"
+        class="contrast outline"
+        aria-label="Support PureDNS"
+      >
+        For Family
+      </a>
+      {% endif %}
     </p>
     <div class="grid">
       <div>

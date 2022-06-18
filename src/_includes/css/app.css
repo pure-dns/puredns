@@ -10,11 +10,6 @@
   --nav-border-color: rgba(115, 130, 140, 0.2);
 }
 
-body > nav {
-  --nav-link-spacing-vertical: 1rem;
-  box-shadow: 0 1px 0 var(--nav-border-color);
-}
-
 header {
   padding-top: 1rem !important;
   padding-bottom: 0 !important;
@@ -161,6 +156,29 @@ body > footer li:not(:first-child)::before {
 }
 
 @media (max-width: 600px) {
+  .container-fluid {
+    border-bottom: 1px solid var(--nav-border-color);
+  }
+
+  nav.container {
+    display: block;
+  }
+
+  nav ul:first-of-type {
+    display: block;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  nav ul:last-of-type {
+    display: none;
+  }
+
+  header :is(h1) {
+    font-size: 1.5rem;
+    margin-top: calc(var(--spacing) * 2);
+  }
+
   .sm\:p-0 {
     padding: 0 !important;
   }
