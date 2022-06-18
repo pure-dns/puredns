@@ -152,6 +152,11 @@ body > footer li:not(:first-child)::before {
   color: transparent;
 }
 
+.text-gradient-wood {
+  --tw-gradient-stops: #dd9945, var(--tw-gradient-to, rgba(239, 68, 68, 0));
+  --tw-gradient-to: #95572c;
+}
+
 @media (max-width: 600px) {
   .sm\:p-0 {
     padding: 0 !important;
