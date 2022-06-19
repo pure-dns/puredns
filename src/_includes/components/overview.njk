@@ -11,9 +11,11 @@
         <button class="tab-links" onclick="openTab(event, 'doq')">
           DNS over QUIC
         </button>
+        {% if page.url != "/family/" %}
         <button class="tab-links" onclick="openTab(event, 'dns-tor')">
           DNS over Tor
         </button>
+        {% endif %}
         <button class="tab-links" onclick="openTab(event, 'dnscrypt')">
           DNSCrypt
         </button>
@@ -28,7 +30,7 @@
             you can use the following address.
           </p>
 
-          <pre><code>puredns.org</code></pre>
+          <pre><code>{{ dns_hostname }}</code></pre>
 
           <p>
             Learn how to configure DNS over TLS on your device with the setup
@@ -45,7 +47,7 @@
             lookup results and to avoid blocking from ISPs.
           </p>
 
-          <pre><code>https://puredns.org/dns-query</code></pre>
+          <pre><code>https://{{ dns_hostname }}/dns-query</code></pre>
         </div>
 
         <div id="doq" class="tab-content">
@@ -55,6 +57,7 @@
           </p>
         </div>
 
+        {% if page.url != "/family/" %}
         <div id="dns-tor" class="tab-content">
           <h3>Using DNS over Tor</h3>
           <p>
@@ -67,6 +70,7 @@
             To use the PureDNS Hidden Resolver service please refer to <a href="#how-to-use">setup guide</a> below.
           </p>
         </div>
+        {% endif %}
 
         <div id="dnscrypt" class="tab-content">
           <h3>Using DNSCrypt</h3>
@@ -83,7 +87,7 @@
             following DNS stamp in your DNSCrypt configuration.
           </p>
 
-          <pre><code>sdns://AgcAAAAAAAAAAAALcHVyZWRucy5vcmcKL2Rucy1xdWVyeQ</code></pre>
+          <pre><code>{{ dnsstamp }}</code></pre>
 
           <p>
             You can verify the DNS stamp above using

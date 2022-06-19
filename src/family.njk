@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: DNS for Home to Protect Family and Kids from Cyber Threats
+eleventyNavigation:
+  key: For Family
+  url: /family/
+  order: 2
+---
+
+{% set dns_hostname = "family.puredns.org" %}
+{% set dnsstamp = "sdns://AgcAAAAAAAAAAAASZmFtaWx5LnB1cmVkbnMub3JnCi9kbnMtcXVlcnk" %}
+{% set dnscrypt_name = "puredns-family-doh" %}
+{% set dnscrypt_ipv6_name = "puredns-family-doh-ipv6" %}
+{% set ipv4_1 = "108.137.35.4" %}
+{% set ipv4_2 = "108.137.44.33" %}
+{% set ipv6_1 = "2406:da19:66f:e800:e62b:6932:38d5:9409" %}
+{% set ipv6_2 = "2406:da19:66f:e810:63fc:4173:1c08:a00d" %}
+
+<main style="padding-top: 1rem">
+  {% include "components/as-seen-on.njk" %}
+  {% include "components/overview.njk" %}
+  {% include "components/how-to-use.njk" %}
+  {% include "components/support-us.njk" %}
+</main>

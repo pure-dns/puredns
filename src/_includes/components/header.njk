@@ -1,38 +1,81 @@
-{% if page.url == "/" or page.url == "/id/" %}
-<div class="container text-center" style="margin-top: 3rem">
-  <p>🎉 New: Visit our <a href="/open/">Open Project</a> page to see current metrics.</p>
+<div class="container-fluid" style="padding: .5rem 0">
+  <nav class="container">
+    <ul>
+      <li>
+        <a
+          href="/"
+          aria-label="Back home"
+          style="--color: var(--h1-color); font-size: 24px"
+        >
+          <strong>PureDNS</strong> <small>BETA</small>
+        </a>
+      </li>
+    </ul>
+    <ul>
+      {% set navPages = collections.all | eleventyNavigation %}
+      {%- for entry in navPages %}
+        <li>
+          <a href="{{ entry.url | url }}" {% if entry.url == page.url %} class="contrast" {% else %} class="secondary" {% endif %}>
+            {{ entry.title }}
+          </a>
+        </li>
+      {%- endfor %}
+      <li>
+        <a href="https://saweria.co/fransallen" class="secondary">
+          Donate
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/fransallen" class="contrast" aria-label="Frans Allen's Twitter account">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"/></svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>
+
+{% if page.url == "/" or page.url == "/id/" or page.url == "/family/" %}
 
 <header>
   <div class="container">
-    <a href="/" style="text-decoration: none">
-      <h1>
-        PureDNS
-        <span style="color: #4e4e4e; font-size: 20px;font-weight: 400">BETA</span>
-      </h1>
-    </a>
-    <p>
-      A better Internet with <strong class="text-gradient">privacy-respecting</strong> and <strong class="text-gradient">fast</strong> DNS resolver. Use our DNS over HTTPS/TLS/QUIC/Tor features to encrypt name resolution.
-    </p>
+    {% if page.url != "/family/" %}
+    <h1>A better Internet with <strong class="text-gradient">privacy-respecting</strong> and <strong class="text-gradient">fast</strong> DNS Resolver</h1>
+    <p>Use our DNS over HTTPS/TLS/QUIC/Tor features to encrypt name resolution.</p>
+    {% else %}
+    <h1>Protect Your Family and Kids from <strong class="text-gradient">Cyber Threats</strong> by <strong class="text-gradient">Blocking</strong> access to Websites with <strong class="text-gradient text-gradient-wood">Undesirable Content</strong></h1>
+    <p>DNS for Family blocks malware, adware, gambling, fakenews, and NSFW sites using curated lists of bad domains provided by the open source community.</p>
+    {% endif %}
+
     <p>
       <a
-        href="#setup-guide"
+        href="#overview"
         role="button"
         class="contrast"
         aria-label="Documentation"
         style="margin-right: 0.5rem"
       >
-        Try It Now
+        Get Started
       </a>
 
+      {% if page.url == "/family/" %}
       <a
-        href="#support-us"
+        href="/"
         role="button"
         class="contrast outline"
         aria-label="Support PureDNS"
       >
-        Support Us
+        For Everyone
       </a>
+      {% else %}
+      <a
+        href="/family/"
+        role="button"
+        class="contrast outline"
+        aria-label="Support PureDNS"
+      >
+        For Family
+      </a>
+      {% endif %}
     </p>
     <div class="grid">
       <div>

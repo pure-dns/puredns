@@ -15,7 +15,9 @@
         Browsers
       </a>
       <a class="tab2-links" onclick="openTab2(event, 'routers')">Routers</a>
+      {% if page.url != "/family/" %}
       <a class="tab2-links" onclick="openTab2(event, 'tor')">Tor</a>
+      {% endif %}
     </div>
     <article style="margin-top: 2rem; box-shadow: none; padding: 0">
       <div id="android" class="tab2-content" style="display: block">
@@ -36,7 +38,7 @@
             <strong>Private DNS provider hostname</strong> option.
           </li>
           <li>
-            Enter <strong>puredns.org</strong> and click
+            Enter <strong>{{ dns_hostname }}</strong> and click
             <strong>Save</strong>.
           </li>
         </ol>
@@ -65,7 +67,7 @@
             <strong>Custom server URL</strong>.
           </li>
           <li>
-            Enter <strong>https://puredns.org/dns-query</strong> and click
+            Enter <strong>https://{{ dns_hostname }}/dns-query</strong> and click
             <strong>Accept</strong>.
           </li>
         </ol>
@@ -120,8 +122,8 @@
           <li>Install <strong>DNSCloak</strong> app from the App Store.</li>
           <li>Search <strong>puredns</strong> using search bar.</li>
           <li>
-            Tap <strong>puredns-doh</strong> and
-            <strong>puredns-doh-ipv6</strong>.
+            Tap <strong>{{ dnscrypt_name }}</strong> and
+            <strong>{{ dnscrypt_ipv6_name }}</strong>.
           </li>
           <li>Tap <strong>Use this server</strong>.</li>
         </ol>
@@ -148,10 +150,10 @@
           </li>
         </ol>
         <pre><code>policy.add(policy.all(policy.TLS_FORWARD({
-  {'{{ ipv4_1 }}', hostname='puredns.org'},
-  {'{{ ipv4_2 }}', hostname='puredns.org'},
-  {'{{ ipv6_1 }}', hostname='puredns.org'},
-  {'{{ ipv6_2 }}', hostname='puredns.org'}
+  {'{{ ipv4_1 }}', hostname='{{ dns_hostname }}'},
+  {'{{ ipv4_2 }}', hostname='{{ dns_hostname }}'},
+  {'{{ ipv6_1 }}', hostname='{{ dns_hostname }}'},
+  {'{{ ipv6_2 }}', hostname='{{ dns_hostname }}'}
 })))</code></pre>
 
         <header
@@ -177,13 +179,13 @@
         <pre><code>round_robin_upstreams: 1
   upstream_recursive_servers:
   - address_data: {{ ipv4_1 }}
-  tls_auth_name: "puredns.org"
+  tls_auth_name: "{{ dns_hostname }}"
   - address_data: {{ ipv4_2 }}
-  tls_auth_name: "puredns.org"
+  tls_auth_name: "{{ dns_hostname }}"
   - address_data: {{ ipv6_1 }}
-  tls_auth_name: "puredns.org"
+  tls_auth_name: "{{ dns_hostname }}"
   - address_data: {{ ipv6_2 }}
-  tls_auth_name: "puredns.org"</code></pre>
+  tls_auth_name: "{{ dns_hostname }}"</code></pre>
 
         <header
           style="
@@ -208,10 +210,10 @@
         <pre><code>forward-zone:
   name: "."
   forward-tls-upstream: yes
-  forward-addr: {{ ipv4_1 }}#puredns.org
-  forward-addr: {{ ipv4_2 }}#puredns.org
-  forward-addr: {{ ipv6_1 }}#puredns.org
-  forward-addr: {{ ipv6_2 }}#puredns.org</code></pre>
+  forward-addr: {{ ipv4_1 }}#{{ dns_hostname }}
+  forward-addr: {{ ipv4_2 }}#{{ dns_hostname }}
+  forward-addr: {{ ipv6_1 }}#{{ dns_hostname }}
+  forward-addr: {{ ipv6_2 }}#{{ dns_hostname }}</code></pre>
 
         <header
           style="
@@ -264,7 +266,7 @@
         </ol>
         <pre><code>proxy-dns: true
 proxy-dns-upstream:
-  - https://puredns.org/dns-query</code></pre>
+  - https://{{ dns_hostname }}/dns-query</code></pre>
       </div>
 
       <div id="windows" class="tab2-content">
@@ -278,8 +280,8 @@ proxy-dns-upstream:
           <li>Open <strong>Windows Powershell</strong> as <strong>Administrator</strong>.</li>
           <li>
             <p>Run the following to add PureDNS to the <strong>list of known servers</strong>.</p>
-            <pre><code>Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_1 }} -DohTemplate https://puredns.org/dns-query 
-Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://puredns.org/dns-query</code></pre>
+            <pre><code>Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_1 }} -DohTemplate https://{{ dns_hostname }}/dns-query 
+Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://{{ dns_hostname }}/dns-query</code></pre>
           </li>
           <li>Open <strong>Settings</strong>.</li>
           <li>
@@ -336,7 +338,7 @@ Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://p
           </li>
           <li>
             Specify the <strong>URL</strong> with
-            <strong>https://puredns.org/dns-query</strong>.
+            <strong>https://{{ dns_hostname }}/dns-query</strong>.
           </li>
           <li>
             Click <strong>Check</strong> to quickly test the server and click
@@ -398,7 +400,7 @@ Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://p
           </li>
           <li>
             Select With: Custom, then enter
-            <strong>https://puredns.org/dns-query</strong>.
+            <strong>https://{{ dns_hostname }}/dns-query</strong>.
           </li>
         </ol>
 
@@ -421,7 +423,7 @@ Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://p
           </li>
           <li>
             Select Custom, enter
-            <strong>https://puredns.org/dns-query</strong> and click
+            <strong>https://{{ dns_hostname }}/dns-query</strong> and click
             <strong>OK</strong>.
           </li>
         </ol>
@@ -447,7 +449,7 @@ Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://p
           </li>
           <li>
             Select <strong>Choose a service provider</strong>, then enter
-            <strong>https://puredns.org/dns-query</strong>.
+            <strong>https://{{ dns_hostname }}/dns-query</strong>.
           </li>
         </ol>
 
@@ -471,7 +473,7 @@ Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://p
           </li>
           <li>
             Select With: Custom, then enter
-            <strong>https://puredns.org/dns-query</strong>.
+            <strong>https://{{ dns_hostname }}/dns-query</strong>.
           </li>
         </ol>
       </div>
@@ -521,10 +523,10 @@ Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://p
         <pre><code>forward-zone:
   name: "."
   forward-tls-upstream: yes
-  forward-addr: {{ ipv4_1 }}#puredns.org
-  forward-addr: {{ ipv4_2 }}#puredns.org
-  forward-addr: {{ ipv6_1 }}#puredns.org
-  forward-addr: {{ ipv6_2 }}#puredns.org</code></pre>
+  forward-addr: {{ ipv4_1 }}#{{ dns_hostname }}
+  forward-addr: {{ ipv4_2 }}#{{ dns_hostname }}
+  forward-addr: {{ ipv6_1 }}#{{ dns_hostname }}
+  forward-addr: {{ ipv6_2 }}#{{ dns_hostname }}</code></pre>
 
         <header
           style="
@@ -539,13 +541,14 @@ Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://p
         <pre><code>/tool fetch url=https://curl.se/ca/cacert.pem
 /certificate import file-name=cacert.pem
 /ip dns set servers=
-/ip dns static add name=puredns.org address={{ ipv4_1 }} type=A
-/ip dns static add name=puredns.org address={{ ipv4_2 }} type=A
-/ip dns static add name=puredns.org address={{ ipv6_1 }} type=AAAA
-/ip dns static add name=puredns.org address={{ ipv6_2 }} type=AAAA
-/ip dns set use-doh-server="https://puredns.org/dns-query" verify-doh-cert=yes</code></pre>
+/ip dns static add name={{ dns_hostname }} address={{ ipv4_1 }} type=A
+/ip dns static add name={{ dns_hostname }} address={{ ipv4_2 }} type=A
+/ip dns static add name={{ dns_hostname }} address={{ ipv6_1 }} type=AAAA
+/ip dns static add name={{ dns_hostname }} address={{ ipv6_2 }} type=AAAA
+/ip dns set use-doh-server="https://{{ dns_hostname }}/dns-query" verify-doh-cert=yes</code></pre>
       </div>
 
+      {% if page.url != "/family/" %}
       <div id="tor" class="tab2-content">
         <header style="margin-bottom: var(--typography-spacing-vertical)">
           <h4 style="margin-bottom: 0">DNS over TLS</h4>
@@ -553,8 +556,9 @@ Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://p
         <p>Tor usually runs on port <code>9050</code> by default. To use our hidden resolver, we recommend using the <a href="http://www.dest-unreach.org/socat/" rel="noopener noreferrer" target="_blank">socat</a> command.</p>
         <pre><code>PORT=853; socat TCP4-LISTEN:${PORT},reuseaddr,fork SOCKS4A:127.0.0.1:purednsxr4shjkobosrqf7qebwzch3e4ignfr4beq34ngr4nkp2z32id.onion:${PORT},socksport=9050</code></pre>
         <p>Now you can try to test it by sending a query using the <a href="https://www.knot-dns.cz/docs/2.6/html/man_kdig.html" rel="noopener noreferrer" target="_blank">kdig</a> command.</p>
-        <pre><code>kdig -d +tls +tls-hostname=puredns.org @127.0.0.1 -p 853 puredns.org</code></pre>
+        <pre><code>kdig -d +tls +tls-hostname={{ dns_hostname }} @127.0.0.1 -p 853 {{ dns_hostname }}</code></pre>
       </div>
+      {% endif %}
     </article>
   </div>
 </section>

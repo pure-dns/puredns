@@ -8,7 +8,7 @@ const CleanCSS = require("clean-css");
 const { minify } = require("terser");
 
 // Navigation
-//const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 // Start Eleventy Configuration
 module.exports = function (eleventyConfig) {
@@ -43,7 +43,7 @@ module.exports = function (eleventyConfig) {
     },
   );
 
-  //eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/apple");

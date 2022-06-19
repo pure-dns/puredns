@@ -1,0 +1,5 @@
+@media (min-width: 992px) {
+  #overview .grid article.tab {
+    max-height: 528px;
+  }
+}

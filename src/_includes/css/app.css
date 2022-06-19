@@ -1,9 +1,13 @@
 :root:not([data-theme="dark"]),
 [data-theme="light"] {
+  --font-family: "Ubuntu", system-ui, -apple-system, "Segoe UI", "Roboto",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   --primary: #f1577c;
   --primary-hover: #ef476f;
   --muted-color: #566672;
   --spacing: 1rem;
+  --nav-border-color: rgba(115, 130, 140, 0.2);
 }
 
 header {
@@ -12,10 +16,17 @@ header {
 }
 
 header :is(h1, p, .grid) {
-  max-width: 34rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+header :is(h1) {
+  margin-bottom: var(--spacing);
+}
+
+header :is(p) {
+  max-width: 36rem;
 }
 
 header .grid {
@@ -28,7 +39,11 @@ header :is(h1, h2) ~ p {
   color: var(--muted-color);
 }
 
-header :is(h1, h2) {
+header :is(h1) {
+  margin-top: calc(var(--spacing) * 3);
+}
+
+header :is(h2) {
   margin-bottom: var(--spacing);
 }
 
@@ -135,7 +150,35 @@ body > footer li:not(:first-child)::before {
   color: transparent;
 }
 
+.text-gradient-wood {
+  --tw-gradient-stops: #dd9945, var(--tw-gradient-to, rgba(239, 68, 68, 0));
+  --tw-gradient-to: #95572c;
+}
+
 @media (max-width: 600px) {
+  .container-fluid {
+    border-bottom: 1px solid var(--nav-border-color);
+  }
+
+  nav.container {
+    display: block;
+  }
+
+  nav ul:first-of-type {
+    display: block;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  nav ul:last-of-type {
+    display: none;
+  }
+
+  header :is(h1) {
+    font-size: 1.5rem;
+    margin-top: calc(var(--spacing) * 2);
+  }
+
   .sm\:p-0 {
     padding: 0 !important;
   }

@@ -13,9 +13,17 @@ title: PureDNS | Secure And Fast Internet
     <title>{{ subtitleText }}</title>
     <meta name="description" content="{{ subtitleText }}" />
 
+    <link rel="preconnect" href="https://cdn.statically.io">
+    <link rel="preconnect" href="https://fontbit.io">
+
+    <link rel="stylesheet" href="https://cdn.statically.io/gh/picocss/pico/master/css/pico.min.css"/>
+    <link rel="stylesheet" href="https://fontbit.io/css2?family=Ubuntu:wght@400;700&amp;display=swap"/>
+
     {%- set css %}
-    {% include "css/pico.css" %}
     {% include "css/app.css" %}
+    {% if page.url == "/family/" %}
+    {% include "css/family.css" %}
+    {% endif %}
     {% endset %}
     <style>
       {{ css | cssmin | safe }}
@@ -43,10 +51,13 @@ title: PureDNS | Secure And Fast Internet
     {% endif %}
 
     {% if page.url == "/check/" %}
-    {% include "js/confetti.js" %}
     {% include "js/resolver-checker.js" %}
     {% endif %}
     {% endset %}
+
+    {% if page.url == "/check/" %}
+    <script src="https://cdn.statically.io/js/unpkg.com/canvas-confetti@1.5.1/dist/confetti.browser.js"></script>
+    {% endif %}
     <script>
       {{ js | jsmin | safe }}
     </script>
