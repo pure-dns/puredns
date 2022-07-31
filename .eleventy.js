@@ -47,6 +47,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/apple");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   return {
     dir: {
