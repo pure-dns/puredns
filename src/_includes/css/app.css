@@ -47,6 +47,10 @@ header :is(h2) {
   margin-bottom: var(--spacing);
 }
 
+.logo img {
+  width: 150px;
+}
+
 #overview {
   padding-bottom: 2rem;
 }
