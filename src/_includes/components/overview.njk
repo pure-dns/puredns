@@ -52,9 +52,26 @@
 
         <div id="doq" class="tab-content">
           <h3>Using DNS over QUIC</h3>
-          <p>
-            Coming soon... Be the first to know when we activate the <strong>DoQ protocol</strong> by following <a href="https://twitter.com/fransallen">@fransallen</a> on Twitter.
+          <p>DNS over QUIC is known to be much faster than DNS over TLS, and is now available under port <strong>853/UDP</strong>.</p>
+          <p>To use PureDNS with DoQ, you may want to use a client like
+            <a
+              href="https://github.com/AdguardTeam/AdGuardHome"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              AdGuard Home
+            </a>
+            or
+            <a
+              href="https://github.com/AdguardTeam/dnsproxy"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              dnsproxy.
+            </a>
           </p>
+
+          <pre><code>quic://{{ dns_hostname }}</code></pre>
         </div>
 
         {% if page.url != "/family/" %}
