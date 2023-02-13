@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "puredns",
-  "description": "Secure & Fast Public DNS Resolver",
+  "description": "Secure and Fast Public DNS Resolver",
   "author": "Frans Allen",
   "license": "MIT",
   "scripts": {
