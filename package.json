@@ -6,12 +6,10 @@
   "license": "MIT",
   "scripts": {
     "build": "npx @11ty/eleventy",
-    "dev": "npx @11ty/eleventy --serve",
-    "format": "prettier --write '**/*.{js,css,html,md}'"
+    "dev": "npx @11ty/eleventy --serve"
   },
   "devDependencies": {
-    "@11ty/eleventy-navigation": "^0.3.2",
-    "prettier": "^2.5.1"
+    "@11ty/eleventy-navigation": "^0.3.2"
   },
   "dependencies": {
     "clean-css": "^5.2.4",
