@@ -39,6 +39,7 @@
       ]
     }
   ],
+  "redirects": [{ "source": "/check/", "destination": "/test/" }],
   "trailingSlash": true,
   "github": {
     "silent": true

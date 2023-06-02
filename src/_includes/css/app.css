@@ -171,6 +171,13 @@ body > footer li:not(:first-child)::before {
   --tw-gradient-to: #95572c;
 }
 
+thead#connectivity:before {
+  content: "@";
+  display: block;
+  line-height: 1rem;
+  text-indent: -99999px;
+}
+
 @media (max-width: 600px) {
   .container-fluid {
     border-bottom: 1px solid var(--nav-border-color);

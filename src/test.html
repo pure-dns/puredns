@@ -1,9 +1,9 @@
 ---
 layout: layouts/base.njk
-title: DNS Resolver Checker
+title: DNS Test
 eleventyNavigation:
-  key: Checker
-  url: /check/
+  key: DNS Test
+  url: /test/
   order: 3
 ---
 
@@ -11,7 +11,7 @@ eleventyNavigation:
   <section>
     <div class="container text-center">
       <hgroup style="margin-bottom: 2.5rem">
-        <h1>DNS Resolver Checker</h1>
+        <h1>DNS Test</h1>
         <h3>Information about your connection to PureDNS.</h3>
       </hgroup>
     </div>
@@ -21,31 +21,61 @@ eleventyNavigation:
     <div class="container" style="max-width: 720px">
       <article>
         <table>
+          <thead>
+            <tr>
+              <th scope="col"><strong>DNS Information</strong></th>
+              <th></th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
               <td>Using Plain DNS</td>
-              <td id="check-dns">Checking...</td>
+              <td id="test-dns">-</td>
             </tr>
             <tr>
               <td>Using DNS over TLS</td>
-              <td id="check-dot">Checking...</td>
+              <td id="test-dot">-</td>
             </tr>
             <tr>
               <td>Using DNS over HTTPS</td>
-              <td id="check-doh">Checking...</td>
+              <td id="test-doh">-</td>
             </tr>
             <tr>
               <td>Using DNS over QUIC</td>
-              <td id="check-doq">Checking...</td>
+              <td id="test-doq">-</td>
             </tr>
             <tr>
               <td>PureDNS Data Center</td>
-              <td id="check-colo">Checking...</td>
+              <td id="test-colo">-</td>
+            </tr>
+          </tbody>
+          <thead id="connectivity">
+            <tr>
+              <th scope="col"><strong>Connectivity</strong></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3.0.86.126</td>
+              <td id="test-resolver-1">-</td>
+            </tr>
+            <tr>
+              <td>3.1.94.218</td>
+              <td id="test-resolver-2">-</td>
+            </tr>
+            <tr>
+              <td>2406:da18:ce3:9803:7106:3bbb:f9df:c955</td>
+              <td id="test-resolver-1-ipv6">-</td>
+            </tr>
+            <tr>
+              <td>2406:da18:ce3:9801:6aa2:5634:9873:71fe</td>
+              <td id="test-resolver-2-ipv6">-</td>
             </tr>
           </tbody>
         </table>
         <div class="text-center">
-          <a href="?recheck=1" role="button" class="contrast">Check again</a>
+          <a href="?r=1" role="button" class="contrast">Test again</a>
         </div>
       </article>
     </div>

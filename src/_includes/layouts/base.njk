@@ -62,12 +62,12 @@ title: PureDNS | Secure and Fast Internet
     {% include "js/leaderboard.js" %}
     {% endif %}
 
-    {% if page.url == "/check/" %}
-    {% include "js/resolver-checker.js" %}
+    {% if page.url == "/test/" %}
+    {% include "js/test.js" %}
     {% endif %}
     {% endset %}
 
-    {% if page.url == "/check/" %}
+    {% if page.url == "/test/" %}
     <script src="https://cdn.statically.io/js/unpkg.com/canvas-confetti@1.5.1/dist/confetti.browser.js"></script>
     {% endif %}
     <script>
