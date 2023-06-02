@@ -178,23 +178,19 @@ thead#connectivity:before {
   text-indent: -99999px;
 }
 
+.container-fluid {
+  border-bottom: 1px solid var(--nav-border-color);
+}
+
 @media (max-width: 600px) {
-  .container-fluid {
-    border-bottom: 1px solid var(--nav-border-color);
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  nav.container {
-    display: block;
-  }
-
-  nav ul:first-of-type {
-    display: block;
-    margin-left: 0;
-    text-align: center;
-  }
-
-  nav ul:last-of-type {
-    display: none;
+  nav ul {
+    justify-content: center;
   }
 
   header :is(h1) {
