@@ -94,7 +94,7 @@ const testColo = (data) => {
 };
 
 const testResolver1El = document.getElementById("test-resolver-1");
-fetch("https://ipv4-aws-sin1.puredns.org/ping")
+fetch("https://ipv4-resolver1.puredns.org/ping")
   .then((response) => response.text())
   .then((data) => testResolver1(data))
   .catch((error) => testResolver1(error));
@@ -108,7 +108,7 @@ const testResolver1 = (data) => {
 };
 
 const testResolver2El = document.getElementById("test-resolver-2");
-fetch("https://ipv4-aws-sin2.puredns.org/ping")
+fetch("https://ipv4-resolver2.puredns.org/ping")
   .then((response) => response.text())
   .then((data) => testResolver2(data))
   .catch((error) => testResolver2(error));
@@ -122,7 +122,7 @@ const testResolver2 = (data) => {
 };
 
 const testResolver1Ipv6El = document.getElementById("test-resolver-1-ipv6");
-fetch("https://ipv6-aws-sin1.puredns.org/ping")
+fetch("https://ipv6-resolver1.puredns.org/ping")
   .then((response) => response.text())
   .then((data) => testResolver1Ipv6(data))
   .catch((error) => testResolver1Ipv6(error));
@@ -136,7 +136,7 @@ const testResolver1Ipv6 = (data) => {
 };
 
 const testResolver2Ipv6El = document.getElementById("test-resolver-2-ipv6");
-fetch("https://ipv6-aws-sin2.puredns.org/ping")
+fetch("https://ipv6-resolver2.puredns.org/ping")
   .then((response) => response.text())
   .then((data) => testResolver2Ipv6(data))
   .catch((error) => testResolver2Ipv6(error));
