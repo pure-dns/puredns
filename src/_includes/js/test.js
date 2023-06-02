@@ -101,9 +101,9 @@ fetch("https://ipv4-aws-sin1.puredns.org/ping")
 
 const testResolver1 = (data) => {
   if (data == "ok") {
-    testResolver1El.innerHTML = svgYes;
+    testResolver1El.innerHTML = "YES";
   } else {
-    testResolver1El.innerHTML = svgNo;
+    testResolver1El.innerHTML = "NO";
   }
 };
 
@@ -115,9 +115,9 @@ fetch("https://ipv4-aws-sin2.puredns.org/ping")
 
 const testResolver2 = (data) => {
   if (data == "ok") {
-    testResolver2El.innerHTML = svgYes;
+    testResolver2El.innerHTML = "YES";
   } else {
-    testResolver2El.innerHTML = svgNo;
+    testResolver2El.innerHTML = "NO";
   }
 };
 
@@ -129,9 +129,9 @@ fetch("https://ipv6-aws-sin1.puredns.org/ping")
 
 const testResolver1Ipv6 = (data) => {
   if (data == "ok") {
-    testResolver1Ipv6El.innerHTML = svgYes;
+    testResolver1Ipv6El.innerHTML = "YES";
   } else {
-    testResolver1Ipv6El.innerHTML = svgNo;
+    testResolver1Ipv6El.innerHTML = "NO";
   }
 };
 
@@ -143,9 +143,9 @@ fetch("https://ipv6-aws-sin2.puredns.org/ping")
 
 const testResolver2Ipv6 = (data) => {
   if (data == "ok") {
-    testResolver2Ipv6El.innerHTML = svgYes;
+    testResolver2Ipv6El.innerHTML = "YES";
   } else {
-    testResolver2Ipv6El.innerHTML = svgNo;
+    testResolver2Ipv6El.innerHTML = "NO";
   }
 };
 
