@@ -4,7 +4,7 @@
 
 :root:not([data-theme="dark"]),
 [data-theme="light"] {
-  --font-family: "Ubuntu", system-ui, -apple-system, "Segoe UI", "Roboto",
+  --font-family: "Inter", system-ui, -apple-system, "Segoe UI", "Roboto",
     "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
   --primary: #f1577c;
@@ -14,12 +14,26 @@
   --nav-border-color: rgba(115, 130, 140, 0.2);
 }
 
+body {
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  letter-spacing: -0.05em;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
 [role="button"],
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   --border-radius: 3rem;
+  letter-spacing: -0.01em;
 }
 
 header {
@@ -38,7 +52,7 @@ header :is(h1) {
 }
 
 header :is(p) {
-  max-width: 36rem;
+  max-width: 42rem;
 }
 
 header .grid {
@@ -59,6 +73,16 @@ header :is(h2) {
   margin-bottom: var(--spacing);
 }
 
+header h1 span,
+header h2 span {
+  display: block;
+}
+
+article {
+  border: 2px solid var(--nav-border-color);
+  box-shadow: none;
+}
+
 .logo img {
   width: 135px;
 }
@@ -76,7 +100,6 @@ header :is(h2) {
   border: none;
   outline: none;
   padding: 14px 16px;
-  font-size: 17px;
 }
 
 .tab button:not(.active) {
@@ -94,6 +117,10 @@ header :is(h2) {
 
 .text-center {
   text-align: center;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .tab2 .tab2-links {
@@ -166,9 +193,14 @@ body > footer li:not(:first-child)::before {
   color: transparent;
 }
 
-.text-gradient-wood {
+.text-gradient-golden {
   --tw-gradient-stops: #dd9945, var(--tw-gradient-to, rgba(239, 68, 68, 0));
   --tw-gradient-to: #95572c;
+}
+
+.text-gradient-red {
+  --tw-gradient-stops: #e91e63, var(--tw-gradient-to, rgba(239, 68, 68, 0));
+  --tw-gradient-to: #f44336;
 }
 
 thead#connectivity:before {
@@ -182,7 +214,42 @@ thead#connectivity:before {
   border-bottom: 1px solid var(--nav-border-color);
 }
 
-@media (max-width: 600px) {
+#donate {
+  padding-top: 2rem;
+}
+
+#donate header {
+  border: 4px solid var(--range-border-color);
+  border-radius: 8px;
+  padding: 2rem 1rem !important;
+}
+
+#crypto {
+  max-width: fit-content;
+  margin: auto;
+  margin-top: 1.5rem;
+  margin-left: 0;
+}
+
+#crypto p {
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+}
+
+#crypto p span {
+  margin-left: 8px;
+}
+
+#how-to-use article {
+  margin-top: 2rem;
+  border: none;
+  padding: 0;
+}
+
+@media (max-width: 576px) {
   nav {
     display: flex;
     flex-direction: column;
@@ -211,6 +278,23 @@ thead#connectivity:before {
   }
 }
 
+@media (min-width: 576px) {
+  #crypto {
+    margin-left: auto;
+  }
+
+  #crypto p {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  header h1 span,
+  header h2 span {
+    display: inline;
+  }
+}
+
 @media (min-width: 992px) {
   :root {
     --font-size: 18px;
@@ -236,6 +320,11 @@ thead#connectivity:before {
   .tab2 .tab2-links.active {
     background: none;
     border-bottom: 4px solid #000;
+  }
+
+  #how-to-use .container {
+    max-width: 48rem;
+    padding: 0 var(--block-spacing-horizontal);
   }
 }
 

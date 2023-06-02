@@ -25,7 +25,7 @@
         </li>
       {%- endfor %}
       <li>
-        <a href="https://saweria.co/fransallen" class="secondary">
+        <a href="/#donate" class="secondary">
           Donate
         </a>
       </li>
@@ -45,14 +45,19 @@
 
 {% if page.url == "/" or page.url == "/id/" or page.url == "/family/" %}
 
-<header>
+<header class="hero">
   <div class="container">
-    {% if page.url != "/family/" %}
-    <h1>A better Internet with <strong class="text-gradient">privacy-respecting</strong> and <strong class="text-gradient">fast</strong> DNS Resolver</h1>
-    <p>Use our DNS over HTTPS/TLS/QUIC/Tor features to encrypt name resolution.</p>
-    {% else %}
-    <h1>Protect Your Family and Kids from <strong class="text-gradient">Cyber Threats</strong> by <strong class="text-gradient">Blocking</strong> access to Websites with <strong class="text-gradient text-gradient-wood">Undesirable Content</strong></h1>
-    <p>DNS for Family blocks malware, adware, gambling, fakenews, and NSFW sites using well-curated lists provided by the open source community.</p>
+    {% if page.url == "/" %}
+      <h1>The free, secure and fast DNS service <strong class="text-gradient">you need for a better browsing experience</strong></h1>
+      <p>Use our DNS over HTTPS/TLS/QUIC/Tor features to encrypt your DNS traffic.</p>
+      
+    {% elif page.url == "/id/" %}
+      <h1>Secure and fast DNS service <strong class="text-gradient">for Indonesian Internet</strong> to <strong class="text-gradient text-gradient-golden">protect your privacy</strong> online</h1>
+      <p>Keep your online activity private with our secure and fast DNS service.</p>
+
+    {% elif page.url == "/family/" %}
+      <h1>Protect Your Family and Kids from <strong class="text-gradient">Cyber Threats</strong> by <strong class="text-gradient">Blocking</strong> access to Websites with <strong class="text-gradient text-gradient-red">Undesirable Content</strong></h1>
+      <p>DNS for Family blocks malware, adware, gambling, fakenews, and NSFW sites using well-curated lists provided by the open source community.</p>
     {% endif %}
 
     <p>
