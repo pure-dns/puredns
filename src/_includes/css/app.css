@@ -60,7 +60,7 @@ header :is(h2) {
 }
 
 .logo img {
-  width: 150px;
+  width: 135px;
 }
 
 #overview {
@@ -212,6 +212,10 @@ thead#connectivity:before {
 }
 
 @media (min-width: 992px) {
+  :root {
+    --font-size: 18px;
+  }
+
   #overview .grid .grid {
     grid-template-columns: 1fr;
   }
