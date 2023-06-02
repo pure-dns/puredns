@@ -271,39 +271,22 @@ proxy-dns-upstream:
 
       <div id="windows" class="tab2-content">
         <header style="margin-bottom: var(--typography-spacing-vertical)">
-          <h4 style="margin-bottom: 0">Encrypted DNS</h4>
+          <h4 style="margin-bottom: 0">DNS over HTTPS</h4>
           <small style="font-size: 15px">
-            Requires Windows 10 or higher.
+            Windows 11
           </small>
         </header>
         <ol>
-          <li>Open <strong>Windows Powershell</strong> as <strong>Administrator</strong>.</li>
-          <li>
-            <p>Run the following to add PureDNS to the <strong>list of known servers</strong>.</p>
-            <pre><code>Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_1 }} -DohTemplate https://{{ dns_hostname }}/dns-query 
-Add-DnsClientDohServerAddress -ServerAddress {{ ipv4_2 }} -DohTemplate https://{{ dns_hostname }}/dns-query</code></pre>
-          </li>
-          <li>Open <strong>Settings</strong>.</li>
-          <li>
-            Navigate to <strong>Network & internet</strong> →
-            <strong>Status</strong>.
-          </li>
-          <li>Click on <strong>Properties</strong>.</li>
-          <li>
-            Click <strong>Edit</strong> under <strong>DNS settings</strong>.
-          </li>
-          <li>
-            Select the <strong>Manual</strong> option, and then specify
-            <strong>Preferred DNS</strong> and
-            <strong>Alternate DNS</strong> IP addresses with
-            <strong class="monospace">{{ ipv4_1 }}</strong> for
-            <strong>Primary</strong> and
-            <strong class="monospace">{{ ipv4_2 }}</strong> for
-            <strong>Alternate</strong>.
-          </li>
-          <li>
-            Select <strong>Encrypted only (DNS over HTTPS)</strong> for both.
-          </li>
+          <li>Open the <strong>Settings</strong> app.</li>
+          <li>Go to <strong>Network &amp; internet</strong>.</li>
+          <li>Click on <strong>Wi-Fi</strong> (or Ethernet).</li>
+          <li>Click on <strong>Hardware properties</strong>, or ignore this step if you clicked on Ethernet.</li>
+          <li>Click the <strong>Edit</strong> button next to DNS server assignment.</li>
+          <li>Select <strong>Manual</strong>.</li>
+          <li>Enable IPv4.</li>
+          <li>Enter <strong class="monospace">{{ ipv4_1 }}</strong> as Preferred DNS, then select On (manual template) and enter <strong>https://{{ dns_hostname }}/dns-query</strong></li>
+          <li>Enter <strong class="monospace">{{ ipv4_2 }}</strong> as Alternate DNS, then select On (manual template) and enter <strong>https://{{ dns_hostname }}/dns-query</strong></li>
+          <li>Click Save.</li>
         </ol>
         <header
           style="
