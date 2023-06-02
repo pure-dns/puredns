@@ -228,7 +228,7 @@ thead#connectivity:before {
   max-width: fit-content;
   margin: auto;
   margin-top: 1.5rem;
-  margin-left: 0;
+  margin-left: -1.5rem;
 }
 
 #crypto p {
@@ -249,6 +249,10 @@ thead#connectivity:before {
   padding: 0;
 }
 
+.donate-links a + a {
+  margin-top: 0.5rem;
+}
+
 @media (max-width: 576px) {
   nav {
     display: flex;
@@ -265,6 +269,10 @@ thead#connectivity:before {
     margin-top: calc(var(--spacing) * 2);
   }
 
+  header :is(h2) {
+    font-size: 1.4rem;
+  }
+
   .sm\:p-0 {
     padding: 0 !important;
   }
@@ -275,6 +283,17 @@ thead#connectivity:before {
 
   body > footer ul:last-of-type li:not(:first-child)::before {
     display: none;
+  }
+}
+
+@media (min-width: 375px) {
+  #crypto {
+    margin-left: 0;
+  }
+
+  .donate-links a + a {
+    margin-top: 0;
+    margin-left: 0.5rem;
   }
 }
 
