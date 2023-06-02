@@ -1,1 +1,2 @@
+Sitemap: https://puredns.org/sitemap.xml
 User-agent: *
