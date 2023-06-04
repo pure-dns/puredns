@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Custom DoH Servers for Intra
+---
+
+{% set dns_hostname = "puredns.org" %}
+{% set dnscrypt_name = "puredns-doh" %}
+{% set dnscrypt_ipv6_name = "puredns-doh-ipv6" %}
+{% set dnsstamp = "sdns://AgcAAAAAAAAAAAALcHVyZWRucy5vcmcKL2Rucy1xdWVyeQ" %}
+{% set ipv4_1 = "3.0.86.126" %}
+{% set ipv4_2 = "3.1.94.218" %}
+{% set ipv6_1 = "2406:da18:ce3:9803:7106:3bbb:f9df:c955" %}
+{% set ipv6_2 = "2406:da18:ce3:9801:6aa2:5634:9873:71fe" %}
+
+{% set hero_title = 'Secure and fast DoH Servers <strong class="text-gradient">for Intra App</strong> to <strong class="text-gradient text-gradient-golden">protect your privacy</strong> online' %}
+{% set hero_desc = "Keep your online activity private with our secure and fast DNS service." %}
+
+{% include "components/hero.njk" %}
+
+<main style="padding-top: 1rem">
+  {% include "components/as-seen-on.njk" %}
+  {% include "components/overview.njk" %}
+  {% include "components/how-to-use.njk" %}
+  {% include "components/donate.njk" %}
+</main>
