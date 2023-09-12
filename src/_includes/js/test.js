@@ -16,7 +16,6 @@ fetch(
 const testDNS = (data) => {
   if (data == "ok") {
     testDNSEl.innerHTML = svgYes;
-    confetti();
   } else {
     testDNSEl.innerHTML = svgNo;
   }
@@ -35,7 +34,6 @@ fetch(
 const testDOT = (data) => {
   if (data == "ok") {
     testDOTEl.innerHTML = svgYes;
-    confetti();
   } else {
     testDOTEl.innerHTML = svgNo;
   }
@@ -54,7 +52,6 @@ fetch(
 const testDOH = (data) => {
   if (data == "ok") {
     testDOHEl.innerHTML = svgYes;
-    confetti();
   } else {
     testDOHEl.innerHTML = svgNo;
   }
@@ -73,7 +70,6 @@ fetch(
 const testDOQ = (data) => {
   if (data == "ok") {
     testDOQEl.innerHTML = svgYes;
-    confetti();
   } else {
     testDOQEl.innerHTML = svgNo;
   }
@@ -146,6 +142,42 @@ const testResolver2Ipv6 = (data) => {
     testResolver2Ipv6El.innerHTML = "YES";
   } else {
     testResolver2Ipv6El.innerHTML = "NO";
+  }
+};
+
+const testFilterFamilyEl = document.getElementById("test-filter-family");
+fetch(
+  "https://" +
+    Math.random().toString(36).substring(2) +
+    ".test-family.puredns.org",
+)
+  .then((response) => response.text())
+  .then((data) => testFilterFamily(data))
+  .catch((error) => testFilterFamily(error));
+
+const testFilterFamily = (data) => {
+  if (data == "ok") {
+    testFilterFamilyEl.innerHTML = "YES";
+  } else {
+    testFilterFamilyEl.innerHTML = "NO";
+  }
+};
+
+const testFilterSecurityEl = document.getElementById("test-filter-security");
+fetch(
+  "https://" +
+    Math.random().toString(36).substring(2) +
+    ".test-security.puredns.org",
+)
+  .then((response) => response.text())
+  .then((data) => testFilterSecurity(data))
+  .catch((error) => testFilterSecurity(error));
+
+const testFilterSecurity = (data) => {
+  if (data == "ok") {
+    testFilterSecurityEl.innerHTML = "YES";
+  } else {
+    testFilterSecurityEl.innerHTML = "NO";
   }
 };
 

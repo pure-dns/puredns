@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 title: DNS Test
 eleventyNavigation:
-  key: DNS Test
+  key: Test
   url: /test/
   order: 3
 ---
@@ -49,7 +49,25 @@ eleventyNavigation:
               <td id="test-colo">-</td>
             </tr>
           </tbody>
-          <thead id="connectivity">
+          <thead class="mt-1">
+            <tr>
+              <th scope="col">
+                <strong>DNS Filter</strong>
+              </th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Family</td>
+              <td id="test-filter-family">-</td>
+            </tr>
+            <tr>
+              <td>Security</td>
+              <td id="test-filter-security">-</td>
+            </tr>
+          </tbody>
+          <thead class="mt-1">
             <tr>
               <th scope="col">
                 <strong>Connectivity to Resolvers</strong>

@@ -87,10 +87,6 @@ article {
   width: 135px;
 }
 
-#overview {
-  padding-bottom: 2rem;
-}
-
 #overview .grid article.tab {
   margin-bottom: 1rem;
 }
@@ -203,7 +199,7 @@ body > footer li:not(:first-child)::before {
   --tw-gradient-to: #f44336;
 }
 
-thead#connectivity:before {
+thead.mt-1:before {
   content: "@";
   display: block;
   line-height: 1rem;
@@ -214,8 +210,62 @@ thead#connectivity:before {
   border-bottom: 1px solid var(--nav-border-color);
 }
 
+.space-x-4 > * + * {
+  margin-left: 1rem;
+}
+
+#features,
 #donate {
-  padding-top: 2rem;
+  padding-top: 4rem;
+}
+
+#features hgroup {
+  max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--block-spacing-vertical);
+}
+
+#features .grid {
+  grid-gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  #features .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+#features hgroup {
+  text-align: center;
+}
+#features hgroup h2 {
+  margin-bottom: var(--spacing);
+}
+#features hgroup:after {
+  display: none;
+}
+#features h3 {
+  --font-weight: 400;
+}
+#features svg {
+  color: var(--primary);
+  width: auto;
+  height: 2rem;
+  background: #f1f1f1;
+  border-radius: 50%;
+  padding: 0.4rem;
+}
+#features h4 {
+  --font-size: 1rem;
+  --font-weight: 400;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+#features p {
+  --color: var(--muted-color);
 }
 
 #donate header {
@@ -243,14 +293,30 @@ thead#connectivity:before {
   margin-left: 8px;
 }
 
+#how-to-use {
+  padding-top: 1rem;
+}
+
 #how-to-use article {
   margin-top: 2rem;
   border: none;
   padding: 0;
 }
 
-.donate-links a + a {
+.donate-links {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: fit-content;
+}
+
+.donate-links > * + * {
   margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.btn-sm {
+  padding: 0.5rem 0.9rem;
 }
 
 @media (max-width: 576px) {
@@ -290,11 +356,6 @@ thead#connectivity:before {
   #crypto {
     margin-left: 0;
   }
-
-  .donate-links a + a {
-    margin-top: 0;
-    margin-left: 0.5rem;
-  }
 }
 
 @media (min-width: 576px) {
@@ -311,6 +372,16 @@ thead#connectivity:before {
   header h1 span,
   header h2 span {
     display: inline;
+  }
+
+  .donate-links {
+    display: flex;
+    justify-content: center;
+  }
+
+  .donate-links > * + * {
+    margin-top: 0;
+    margin-left: 0.5rem;
   }
 }
 
