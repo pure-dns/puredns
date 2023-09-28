@@ -233,6 +233,11 @@ thead.mt-1:before {
   margin: 0;
 }
 
+.info {
+  background-color: #f9fafb;
+  padding: 6px 0;
+}
+
 @media (min-width: 768px) {
   #features .grid {
     grid-template-columns: 1fr 1fr;
