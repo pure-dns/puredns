@@ -49,6 +49,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/apple");
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy({
+    "static/ads.txt": "./ads.txt",
+  });
 
   return {
     dir: {
