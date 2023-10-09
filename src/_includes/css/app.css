@@ -421,6 +421,10 @@ thead.mt-1:before {
     max-width: 48rem;
     padding: 0 var(--block-spacing-horizontal);
   }
+
+  .adshomepage {
+    max-width: 48rem;
+  }
 }
 
 @media (min-width: 1200px) {
