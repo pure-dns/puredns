@@ -324,6 +324,11 @@ thead.mt-1:before {
   padding: 0.5rem 0.9rem;
 }
 
+.adshomepage {
+  border: 1px solid #eee;
+  margin-bottom: 1rem;
+}
+
 @media (max-width: 576px) {
   nav {
     display: flex;
@@ -424,7 +429,7 @@ thead.mt-1:before {
 
   .adshomepage {
     max-width: 48rem;
-    max-height: 172px;
+    margin-top: -1rem;
   }
 }
 
