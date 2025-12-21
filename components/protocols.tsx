@@ -100,9 +100,6 @@ export function Protocols() {
         <div className="space-y-4">
           <div className="flex items-center gap-2">
             <h3 className="text-base font-semibold">Other Options</h3>
-            <span className="text-xs text-muted-foreground">
-              (for specific needs)
-            </span>
           </div>
           <div className="space-y-3">
             {otherProtocols.map((protocol) => (
