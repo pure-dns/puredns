@@ -26,6 +26,11 @@ export function Protocols() {
       description: "For advanced users",
     },
     {
+      name: "HTTP3",
+      address: "h3://dns.puredns.org",
+      description: "Forced HTTP/3",
+    },
+    {
       name: "QUIC",
       address: "quic://dns.puredns.org",
       description: "Faster connection",
