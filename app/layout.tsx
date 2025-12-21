@@ -19,6 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          src="https://api-scout.reflexapi.net/app"
+          data-website-id="2c2bc413-b836-4047-9c31-ac650a796552"
+        ></script>
+      </head>
       <body
         className={`${inter.className} ${geistMono.variable} font-sans antialiased`}
       >
