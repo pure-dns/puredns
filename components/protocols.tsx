@@ -43,8 +43,8 @@ export function Protocols() {
   ];
 
   const plainDNS = {
-    ipv4: ["43.165.192.19", "43.165.192.93"],
-    ipv6: ["100::"],
+    ipv4: ["202.155.157.201", "157.15.124.220"],
+    ipv6: ["2001:df7:5300:18::64f", "2001:df7:5300:15::dc"],
   };
 
   return (
@@ -176,12 +176,7 @@ export function Protocols() {
               <div>
                 <p className="mb-2 text-xs font-medium">IPv6</p>
                 <div className="space-y-1">
-                  <div className="flex items-center gap-2 rounded-md bg-background px-3 py-2">
-                    <code className="flex-1 font-mono text-xs break-all">
-                      Coming soon
-                    </code>
-                  </div>
-                  {/* {plainDNS.ipv6.map((ip) => (
+                  {plainDNS.ipv6.map((ip) => (
                     <div
                       key={ip}
                       className="flex items-center gap-2 rounded-md bg-background px-3 py-2"
@@ -202,7 +197,7 @@ export function Protocols() {
                         )}
                       </Button>
                     </div>
-                  ))} */}
+                  ))}
                 </div>
               </div>
             </div>
