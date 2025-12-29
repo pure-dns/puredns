@@ -37,7 +37,8 @@ export function Protocols() {
     },
     {
       name: "DNSCrypt",
-      address: "sdns://AgcAAAAAAAAAAAALcHVyZWRucy5vcmcKL2Rucy1xdWVyeQ",
+      address:
+        "sdns://AgcAAAAAAAAADjE1Ny4xNS4xMjQuMjIwAA9kbnMucHVyZWRucy5vcmcKL2Rucy1xdWVyeQ",
       description: "Alternative encryption",
     },
   ];
