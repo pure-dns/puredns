@@ -28,11 +28,11 @@ const nextConfig = {
         ],
       },
       {
-        source: "/apple/:path*.mobileconfig",
+        source: "/apple/PureDNS.mobileconfig",
         headers: [
           {
             key: "Content-Disposition",
-            value: 'attachment; filename=":path*.mobileconfig"',
+            value: 'attachment; filename="PureDNS.mobileconfig"',
           },
           {
             key: "Content-Type",
