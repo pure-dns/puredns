@@ -50,7 +50,7 @@ export function Protocols() {
 
   return (
     <section id="protocols" className="pb-16">
-      <div className="container mx-auto max-w-3xl px-4">
+      <div className="container mx-auto max-w-4xl px-4">
         <div className="mb-8 rounded-xl border-2 border-primary bg-gradient-to-br from-primary/5 to-primary/10 p-6 shadow-sm">
           <div className="mb-3 flex items-center gap-2">
             <div className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">

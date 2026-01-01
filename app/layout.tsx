@@ -2,6 +2,8 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/header";
+import { DNSTester } from "@/components/dns-tester";
 
 const inter = Inter({ subsets: ["latin"] });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
@@ -29,6 +31,8 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${geistMono.variable} font-sans antialiased`}
       >
+        <DNSTester />
+        <Header />
         {children}
       </body>
     </html>

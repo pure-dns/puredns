@@ -27,6 +27,19 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: "/apple/:path*.mobileconfig",
+        headers: [
+          {
+            key: "Content-Disposition",
+            value: 'attachment; filename=":path*.mobileconfig"',
+          },
+          {
+            key: "Content-Type",
+            value: "application/x-apple-aspen-config",
+          },
+        ],
+      },
     ];
   },
 };

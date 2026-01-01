@@ -3,7 +3,7 @@ import { Server, Lock, Zap, Globe, Shield, Target } from "lucide-react";
 export function About() {
   return (
     <section id="about" className="py-16 bg-muted/30">
-      <div className="container mx-auto max-w-3xl px-4">
+      <div className="container mx-auto max-w-4xl px-4">
         <div className="mb-8">
           <h2 className="mb-3 text-2xl font-bold tracking-tight sm:text-3xl font-mono">
             About PureDNS
