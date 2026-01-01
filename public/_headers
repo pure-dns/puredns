@@ -1,0 +1,9 @@
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+/apple/PureDNS.mobileconfig
+  Content-Disposition: attachment; filename="PureDNS.mobileconfig"
+  Content-Type: application/x-apple-aspen-config

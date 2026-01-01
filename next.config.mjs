@@ -7,7 +7,8 @@ const nextConfig = {
     unoptimized: true,
   },
   devIndicators: false,
-  async headers() {
+  output: "export",
+  /* async headers() {
     return [
       {
         source: "/images/:path*",
@@ -41,7 +42,7 @@ const nextConfig = {
         ],
       },
     ];
-  },
+  }, */
 };
 
 export default nextConfig;
