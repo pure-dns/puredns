@@ -14,10 +14,19 @@ export function DNSTester() {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-        await fetch("https://test-dns.misc.puredns.org/ping", {
-          signal: controller.signal,
-          mode: "no-cors",
-        });
+        // Generate random 7-character string
+        const randomString = Math.random()
+          .toString(36)
+          .substring(2, 9)
+          .padEnd(7, "0");
+
+        await fetch(
+          `https://test-dns-${randomString}.misc.puredns.org/ping`,
+          {
+            signal: controller.signal,
+            mode: "no-cors",
+          }
+        );
 
         clearTimeout(timeoutId);
         setStatus("connected");
