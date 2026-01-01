@@ -6,8 +6,6 @@ export const metadata = {
   description: "Configure PureDNS on your device with our step-by-step guide",
 };
 
-export const revalidate = 300;
-
 export default function SetupPage() {
   return (
     <main className="min-h-screen">
