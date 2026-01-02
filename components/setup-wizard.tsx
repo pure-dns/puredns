@@ -329,7 +329,7 @@ export function SetupWizard() {
                 <ol className="space-y-3 ml-4 list-decimal">
                   <li>
                     On your iPhone/iPad, download this configuration profile:
-                    <a href="/apple/PureDNS.mobileconfig">
+                    <a href="/static/apple/PureDNS.mobileconfig">
                       <Button className="block">Download profile</Button>
                     </a>
                   </li>
